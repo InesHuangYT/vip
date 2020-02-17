@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		421F4B66C1502D44151AE70B /* Pods_vip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D26910CC96A2F6B87F5DEBE /* Pods_vip.framework */; };
 		B087D22C23F56436001FAC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087D22B23F56436001FAC9A /* AppDelegate.swift */; };
 		B087D22E23F56436001FAC9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087D22D23F56436001FAC9A /* SceneDelegate.swift */; };
 		B087D23023F56436001FAC9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087D22F23F56436001FAC9A /* ViewController.swift */; };
@@ -15,11 +14,27 @@
 		B087D23523F56439001FAC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B087D23423F56439001FAC9A /* Assets.xcassets */; };
 		B087D23823F56439001FAC9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B087D23623F56439001FAC9A /* LaunchScreen.storyboard */; };
 		B0C77BB723F97A9100B8E5B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C77BB623F97A9100B8E5B7 /* GoogleService-Info.plist */; };
+		B0E0A31823F9D18F00BE8ECC /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0A31723F9D18F00BE8ECC /* LogInController.swift */; };
+		B0E0A31A23F9E45900BE8ECC /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0A31923F9E45900BE8ECC /* SignUpController.swift */; };
+		CFA7E67D634CBC463A86197A /* Pods_vip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C404FB32D82B820BA2907F /* Pods_vip.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B0E0A31E23F9F3EB00BE8ECC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		45BE09659B28CB1602AFED1A /* Pods-vip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vip.debug.xcconfig"; path = "Target Support Files/Pods-vip/Pods-vip.debug.xcconfig"; sourceTree = "<group>"; };
-		4D26910CC96A2F6B87F5DEBE /* Pods_vip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48C404FB32D82B820BA2907F /* Pods_vip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B087D22823F56436001FAC9A /* vip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B087D22B23F56436001FAC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B087D22D23F56436001FAC9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +44,8 @@
 		B087D23723F56439001FAC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B087D23923F56439001FAC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C77BB623F97A9100B8E5B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B0E0A31723F9D18F00BE8ECC /* LogInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
+		B0E0A31923F9E45900BE8ECC /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		D35856650B86EBD34153C837 /* Pods-vip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vip.release.xcconfig"; path = "Target Support Files/Pods-vip/Pods-vip.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				421F4B66C1502D44151AE70B /* Pods_vip.framework in Frameworks */,
+				CFA7E67D634CBC463A86197A /* Pods_vip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +67,6 @@
 				45BE09659B28CB1602AFED1A /* Pods-vip.debug.xcconfig */,
 				D35856650B86EBD34153C837 /* Pods-vip.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -60,7 +76,7 @@
 				B087D22A23F56436001FAC9A /* vip */,
 				B087D22923F56436001FAC9A /* Products */,
 				5D55644732E6CFB2D245EF8D /* Pods */,
-				CD1EE81F1E7E9039779AC7D8 /* Frameworks */,
+				D485BABE6F04E2B3F027C7C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +94,7 @@
 				B087D22B23F56436001FAC9A /* AppDelegate.swift */,
 				B087D22D23F56436001FAC9A /* SceneDelegate.swift */,
 				B087D22F23F56436001FAC9A /* ViewController.swift */,
+				B0E0A31B23F9E55200BE8ECC /* Controller */,
 				B087D23123F56436001FAC9A /* Main.storyboard */,
 				B087D23423F56439001FAC9A /* Assets.xcassets */,
 				B087D23623F56439001FAC9A /* LaunchScreen.storyboard */,
@@ -87,10 +104,19 @@
 			path = vip;
 			sourceTree = "<group>";
 		};
-		CD1EE81F1E7E9039779AC7D8 /* Frameworks */ = {
+		B0E0A31B23F9E55200BE8ECC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4D26910CC96A2F6B87F5DEBE /* Pods_vip.framework */,
+				B0E0A31723F9D18F00BE8ECC /* LogInController.swift */,
+				B0E0A31923F9E45900BE8ECC /* SignUpController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D485BABE6F04E2B3F027C7C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48C404FB32D82B820BA2907F /* Pods_vip.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,7 +132,8 @@
 				B087D22423F56436001FAC9A /* Sources */,
 				B087D22523F56436001FAC9A /* Frameworks */,
 				B087D22623F56436001FAC9A /* Resources */,
-				7B1FB67568CD51EF33F37FFA /* [CP] Embed Pods Frameworks */,
+				B0E0A31E23F9F3EB00BE8ECC /* Embed Frameworks */,
+				3F2BA12D169F5B9FBBA680FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,7 +192,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7B1FB67568CD51EF33F37FFA /* [CP] Embed Pods Frameworks */ = {
+		3F2BA12D169F5B9FBBA680FF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -214,6 +241,8 @@
 				B087D23023F56436001FAC9A /* ViewController.swift in Sources */,
 				B087D22C23F56436001FAC9A /* AppDelegate.swift in Sources */,
 				B087D22E23F56436001FAC9A /* SceneDelegate.swift in Sources */,
+				B0E0A31823F9D18F00BE8ECC /* LogInController.swift in Sources */,
+				B0E0A31A23F9E45900BE8ECC /* SignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,10 +390,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NATB5LN22;
 				INFOPLIST_FILE = vip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = Ines.vip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -380,10 +411,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NATB5LN22;
 				INFOPLIST_FILE = vip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = Ines.vip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
