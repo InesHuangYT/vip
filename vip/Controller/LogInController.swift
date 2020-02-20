@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LogInController: UIViewController {
 
@@ -16,6 +17,7 @@ class LogInController: UIViewController {
     
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     
     //properties
@@ -43,11 +45,27 @@ class LogInController: UIViewController {
     @IBAction func signUpButtonWasPressed(_ sender: UIButton) {
     }
     
+    @available(iOS 13.0, *)
     @IBAction func logInButtonWasPressed(_ sender: UIButton) {
+        let account = accountTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        Auth.auth().signIn(withEmail: account, password: password) { (result, error) in
+            
+            if error != nil{
+                self.errorLabel.text = error!.localizedDescription
+                self.errorLabel.textColor = UIColor.red
+            }else{
+
+                if let controller = self.storyboard?.instantiateViewController(withIdentifier: "HomeControllerId") as? HomeController{
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
+               
+            }
+        }
     }
     
-    
 } 
+
 extension LogInController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

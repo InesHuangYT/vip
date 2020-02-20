@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        let navigationBarBackColor = UINavigationBar.appearance()
+        navigationBarBackColor.tintColor = UIColor(red: 137/255, green: 136/255, blue: 128/255, alpha: 1)
+
         return true
     }
 
