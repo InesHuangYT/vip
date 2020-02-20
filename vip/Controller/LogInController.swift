@@ -8,23 +8,31 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
 class LogInController: UIViewController {
-
-    //outlets
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var logInButton: UIButton!
+ 
     
+
+//    UITextField
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+//    UILabel
     @IBOutlet weak var errorLabel: UILabel!
-    
+//    UIButton
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var forgetPasswordButtin: UIButton!
+    @IBOutlet weak var googleConnectionButton: GIDSignInButton!
     
     //properties
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField()
-      
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        // Automatically sign in the user.
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        
     }
     
     //private function
@@ -64,6 +72,13 @@ class LogInController: UIViewController {
         }
     }
     
+    @IBAction func googleConnectionButtonWasPressed(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+    @IBAction func forgetPasswordWasPressed(_ sender: Any) {
+            
+    }
+    
 } 
 
 extension LogInController: UITextFieldDelegate{
@@ -72,3 +87,5 @@ extension LogInController: UITextFieldDelegate{
         return true 
     }
 }
+
+

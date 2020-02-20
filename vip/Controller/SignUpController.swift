@@ -19,30 +19,34 @@ class SignUpController: UIViewController {
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    var uid = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupTextField()
+        if let user = Auth.auth().currentUser{
+                   uid = user.uid
+               }
     }
     
-    func validateField() -> String? {
-        
-        //check that all fields are filled in  
-        if accountTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordConfirmTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || phoneTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
-            return "請輸入全部！"
-        }
-        
-        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        if isPasswordValid(cleanedPassword) == false{
-            return "密碼長度至少為8"
-        }
-        if passwordTextField.text != passwordConfirmTextField.text{
-            
-            return "密碼不一致"
-        }
-        return nil
-    }
+    // To hideKeyboard
+    private func setupTextField(){
+        accountTextField.delegate = self
+        passwordTextField.delegate = self
+        passwordConfirmTextField.delegate = self
+        nameTextField.delegate = self
+        phoneTextField.delegate = self
+         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+   }
     
+    @objc private func hideKeyboard(){
+        accountTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        passwordConfirmTextField.resignFirstResponder()
+        nameTextField.resignFirstResponder()
+        phoneTextField.resignFirstResponder()
+      }
 
     @IBAction func signUpConfirmTap(_ sender: Any) {
         
@@ -63,22 +67,34 @@ class SignUpController: UIViewController {
                 if err != nil{
                     
                     self.showError("Error creating user")
+                    
                 }else{
-                    let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["name" : name, "phone": phone, "uid":result!.user.uid ]) { (error) in
-                        
-                        if error != nil{
-                            self.showError("saving User data error")
-                        }
+                    if let user = Auth.auth().currentUser{
+                        self.uid = user.uid
+                        print("self.uid: ",self.uid)
                     }
-                    
-//        transisiton to the home screens
+                    print("You have successfully signed up")
+                    Database.database().reference(withPath: "users/\(self.uid)/Profile/account").setValue(account)
+                    Database.database().reference(withPath: "users/\(self.uid)/Profile/password").setValue(password)
+                    Database.database().reference(withPath: "users/\(self.uid)/Profile/name").setValue(name)
+                    Database.database().reference(withPath: "users/\(self.uid)/Profile/phone").setValue(phone)
+
+
                     if #available(iOS 13.0, *) {
-                        self.transitionToHome()
+                        self.transitionToHome()      //transisiton to home screens
                     } else {
                         // Fallback on earlier versions
                     }
+                        
+                        
+                        //                    let db = Firestore.firestore()
+                        //                    db.collection("users").addDocument(data: ["account": account,"password":password ,"name" : name, "phone": phone, "uid":result!.user.uid ]) { (error) in
+                        //                        
+                        //                        if error != nil{
+                        //                            self.showError("saving User data error")
+                        //                        }
+                        //                    }
                       
                 }
                 
@@ -88,7 +104,25 @@ class SignUpController: UIViewController {
     }
     
     
-    
+// check if signUp all fit the format
+    func validateField() -> String? {
+        
+        //check that all fields are filled in  
+        if accountTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordConfirmTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || phoneTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "請輸入全部空格！"
+        }
+        
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if isPasswordValid(cleanedPassword) == false{
+            return "密碼長度至少為8"
+        }
+        if passwordTextField.text != passwordConfirmTextField.text{
+            
+            return "密碼不一致"
+        }
+        return nil
+    }
     
     
 //   if password is secured
@@ -102,6 +136,7 @@ class SignUpController: UIViewController {
 //   error message
     func showError(_ message : String){
         errorLabel.text = message
+        errorLabel.textColor = UIColor.red
 //        errorLabel.alpha = 1
     }
     
@@ -110,5 +145,14 @@ class SignUpController: UIViewController {
     func transitionToHome(){
         navigationController?.popViewController(animated: true)
     }
+    
+    
+    
 }
- 
+
+extension SignUpController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true 
+ }
+}
