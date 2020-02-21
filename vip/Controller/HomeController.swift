@@ -8,12 +8,18 @@
 
 import UIKit
 import GoogleSignIn
-class HomeController: UIViewController {
+import FirebaseAuth
 
+class HomeController: UIViewController {
+   
+    @IBOutlet weak var currentUserlabel: UILabel!
     @IBOutlet weak var signOutButton: UIButton!
+    
+    var uid = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        currentUserName()
      }
     
     @IBAction func signOutButtonWasPressed(_ sender: Any) {
@@ -21,6 +27,19 @@ class HomeController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-  
+    func currentUserName()->(String){
+        if let user = Auth.auth().currentUser{
+            uid = user.uid
+            print("uid : ",uid)
+            currentUserlabel.text = " login uid is : " + (uid)
+        }
+        return(uid)
+
+    }
+    
 
 }
+
+
+
+

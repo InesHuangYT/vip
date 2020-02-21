@@ -35,7 +35,6 @@ class LogInController: UIViewController,GIDSignInDelegate {
         super.viewDidLoad()
         setupTextField()
         GIDSignIn.sharedInstance().delegate = self
-
         
     }
     
@@ -80,7 +79,7 @@ class LogInController: UIViewController,GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
         // Automatically sign in the user.
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+//        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         
        
        
@@ -128,7 +127,8 @@ class LogInController: UIViewController,GIDSignInDelegate {
                         Database.database().reference(withPath: "users/\(newUid)/Profile/name").setValue(newUserName)
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(withIdentifier: "HomeControllerId") as! HomeController
-                        self.present(vc, animated: true, completion: nil)
+                        self.navigationController?.pushViewController(vc,animated: true)
+//                        self.present(vc, animated: true, completion: nil)
                                }
                     }
                 }

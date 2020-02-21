@@ -146,8 +146,6 @@ class SignUpController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    
-    
 }
 
 extension SignUpController: UITextFieldDelegate{

@@ -332,13 +332,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="登入成功！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF2-k6-2GK">
-                                <rect key="frame" x="144" y="323" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDa-Az-Qx0">
                                 <rect key="frame" x="172" y="604" width="31" height="30"/>
                                 <state key="normal" title="登出">
@@ -348,23 +341,31 @@
                                     <action selector="signOutButtonWasPressed:" destination="GYL-Ti-wte" eventType="touchUpInside" id="TMd-a5-I4G"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登入成功！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF2-k6-2GK">
+                                <rect key="frame" x="8" y="323" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93459850550000001" green="0.95914202930000003" blue="0.90638643500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dDa-Az-Qx0" firstAttribute="leading" secondItem="DFz-yW-z2G" secondAttribute="leading" constant="172" id="0VF-aP-hIb"/>
-                            <constraint firstItem="DFz-yW-z2G" firstAttribute="trailing" secondItem="dDa-Az-Qx0" secondAttribute="trailing" constant="172" id="0dR-UU-Vy8"/>
-                            <constraint firstItem="DFz-yW-z2G" firstAttribute="bottom" secondItem="dDa-Az-Qx0" secondAttribute="bottom" constant="33" id="h6P-ve-9mn"/>
-                            <constraint firstItem="dDa-Az-Qx0" firstAttribute="centerX" secondItem="6bl-Dz-JYk" secondAttribute="centerX" id="s5s-aC-YKS"/>
+                            <constraint firstItem="dDa-Az-Qx0" firstAttribute="centerX" secondItem="6bl-Dz-JYk" secondAttribute="centerX" id="Ax8-0a-rNq"/>
+                            <constraint firstItem="dDa-Az-Qx0" firstAttribute="centerX" secondItem="WF2-k6-2GK" secondAttribute="centerX" id="NzM-PZ-sQo"/>
+                            <constraint firstItem="WF2-k6-2GK" firstAttribute="leading" secondItem="DFz-yW-z2G" secondAttribute="leading" constant="8" id="Qkr-MR-q5X"/>
+                            <constraint firstItem="DFz-yW-z2G" firstAttribute="bottom" secondItem="dDa-Az-Qx0" secondAttribute="bottom" constant="33" id="o70-Bb-FMr"/>
+                            <constraint firstItem="WF2-k6-2GK" firstAttribute="centerY" secondItem="6bl-Dz-JYk" secondAttribute="centerY" id="sug-Cp-jKL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DFz-yW-z2G"/>
                     </view>
                     <connections>
+                        <outlet property="currentUserlabel" destination="WF2-k6-2GK" id="8h0-u4-HWU"/>
                         <outlet property="signOutButton" destination="dDa-Az-Qx0" id="zhD-PY-hVw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MW-xy-39h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1623" y="126"/>
+            <point key="canvasLocation" x="1621.5999999999999" y="125.4872563718141"/>
         </scene>
     </scenes>
     <resources>
