@@ -19,7 +19,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentUserName()
+        print("current user uidd : " , currentUserName())
      }
     
     @IBAction func signOutButtonWasPressed(_ sender: Any) {
