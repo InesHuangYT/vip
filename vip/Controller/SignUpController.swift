@@ -74,7 +74,7 @@ class SignUpController: UIViewController {
                         self.uid = user.uid
                         print("self.uid: ",self.uid)
                     }
-                    print("You have successfully signed up")
+                    print("Successfully signed up")
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/account").setValue(account)
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/password").setValue(password)
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/name").setValue(name)

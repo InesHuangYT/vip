@@ -11,9 +11,9 @@ import UIKit
 import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-    
-    
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
     var window : UIWindow?
 
 
@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         navigationBarBackColor.tintColor = UIColor(red: 137/255, green: 136/255, blue: 128/255, alpha: 1)
         
         GIDSignIn.sharedInstance().clientID = "170838114822-7ulfotevovsmh9ntemqvorlm6e1v1leu.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
         return true
     }
     
@@ -35,56 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        
-        if let error  = error {
-            print("\(error.localizedDescription)")
-        }else{
-            let userId = user.userID;                  // For client-side use only!
-            let fullName = user.profile.name;
-            let email = user.profile.email;
-            let idToken = user.authentication.idToken; // Safe to send to the server
-
-            print("userId: ",userId!)
-            print("fullName: ",fullName!)
-            print("email: ",email!)
-            print("idToken: ",idToken!)
-
-        }
-        
-        
-//        
-//        guard let authentication = user.authentication else {return}
-//        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-//        Auth.auth().signIn(with: credential) { (result, error) in
-//            if let error = error{
-//                print ("faled to signIn and retrieve data with error ", error)
-//                return
-//        }
-//            guard let uid = result?.user.uid else {return}
-//            guard let email = result?.user.email else {return}
-//            guard let name = result?.user.displayName else {return}
-//            let values = ["account":email,"name":name]
-////            let values = ["account":email,"name":name,"password":0, "phone" :nil, "uid":uid] as [String : Any?]
-//            Database.database().reference().child("users").setValue(values,withCompletionBlock: {(error,ref) in
-//
-//            
-//            })
-//            
-//        
-//        }
-        
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!){
-       
-        // Perform any operations when the user disconnects from app here.
-        print("User has diconected!")
-        
-    }
-    
- 
-
     // MARK: UISceneSession Lifecycle
 
     @available(iOS 13.0, *)

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
-class LogInController: UIViewController {
+class LogInController: UIViewController,GIDSignInDelegate {
  
     
 
@@ -24,18 +25,21 @@ class LogInController: UIViewController {
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var forgetPasswordButtin: UIButton!
     @IBOutlet weak var googleConnectionButton: GIDSignInButton!
+//    var
+    var uid = ""
+    var account = ""
+    var userName = ""
     
     //properties
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField()
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        // Automatically sign in the user.
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        GIDSignIn.sharedInstance().delegate = self
+
         
     }
     
-    //private function
+    //private function 
     private func setupTextField(){
         accountTextField.delegate = self
         passwordTextField.delegate = self
@@ -71,12 +75,78 @@ class LogInController: UIViewController {
             }
         }
     }
-    
+//    connect google button 
     @IBAction func googleConnectionButtonWasPressed(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
+        // Automatically sign in the user.
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        
+       
+       
     }
+    
+    
     @IBAction func forgetPasswordWasPressed(_ sender: Any) {
             
+    }
+    
+    func currentUserName()->(uid: String, account: String, username: String){
+        if let user = Auth.auth().currentUser{
+            uid = user.uid
+            account = user.email!
+            userName = user.displayName!
+            print("uid : ",uid)
+            print("userName : ",userName)
+            
+        }
+        return(uid,account,userName)
+
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!){
+            
+            if let error  = error {
+                print("here is the erro occur : \(error.localizedDescription)")
+            }
+            else{
+                guard let authentication = user.authentication else {return}
+                let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+                Auth.auth().signIn(with: credential) { (authresult, error) in
+                    if error != nil{
+                        print("faled to signIn and retrieve data with error")
+                        return
+                    }
+                    else{
+//                        self.currentUserName()
+                        print("start connect googleSignUp data to firebase!")
+                        let currentUser = self.currentUserName()
+                        let newUid = currentUser.uid
+                        let newAcoount = currentUser.account
+                        let newUserName = currentUser.username
+                        Database.database().reference(withPath: "users/\(newUid)/Profile/account").setValue(newAcoount)
+                        Database.database().reference(withPath: "users/\(newUid)/Profile/name").setValue(newUserName)
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "HomeControllerId") as! HomeController
+                        self.present(vc, animated: true, completion: nil)
+                               }
+                    }
+                }
+//                let userId = user.userID;                // For client-side use only!
+//                let fullName = user.profile.name;
+//                let email = user.profile.email;
+//                let idToken = user.authentication.idToken; // Safe to send to the server
+//
+//                print("userId: ":userId!,"fullName: ":fullName!,"email: ":email!,"idToken: ":idToken!)
+                
+            }
+        
+        
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!){
+       
+        // Perform any operations when the user disconnects from app here.
+        print("User has diconected!")
+        
     }
     
 } 
@@ -89,3 +159,6 @@ extension LogInController: UITextFieldDelegate{
 }
 
 
+
+
+    
