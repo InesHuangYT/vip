@@ -4,7 +4,7 @@
 //
 //  Created by Ines on 2020/2/17.
 //  Copyright © 2020 Ines. All rights reserved.
-//
+// Swift - 告警提示框（UIAlertController）的用法 https://www.hangge.com/blog/cache/detail_651.html
 
 import UIKit
 import FirebaseAuth
@@ -55,7 +55,7 @@ class SignUpController: UIViewController {
         if error != nil{
             //something wrong with text fields, show error message
             showError(error!)
-            print("error:",error!)
+            print("error here: ",error!)
         }else{
             let account = accountTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -66,7 +66,7 @@ class SignUpController: UIViewController {
             Auth.auth().createUser(withEmail: account, password: password) {(result,err) in 
                 if err != nil{
                     
-                    self.showError("Error creating user")
+                    self.showError("Error with account form, must be email form")
                     
                 }else{
                     
@@ -79,15 +79,20 @@ class SignUpController: UIViewController {
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/password").setValue(password)
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/name").setValue(name)
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/phone").setValue(phone)
+                    
+                    let message = UIAlertController(title: "註冊成功", message: nil, preferredStyle: .alert)
+                    let confirmAction = UIAlertAction(title: "返回登入頁面", style: .default, handler: {
+                        action in 
+                        print("here need to return to login page!")
+                        if #available(iOS 13.0, *) {
+                            self.transitionToHome()      //transisiton to home screens
+                        } else {
+                            // Fallback on earlier versions
+                        }
+                    })
+                    message.addAction(confirmAction)
+                    self.present(message, animated: true, completion: nil)
 
-
-                    if #available(iOS 13.0, *) {
-                        self.transitionToHome()      //transisiton to home screens
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                        
-                        
                         //                    let db = Firestore.firestore()
                         //                    db.collection("users").addDocument(data: ["account": account,"password":password ,"name" : name, "phone": phone, "uid":result!.user.uid ]) { (error) in
                         //                        
