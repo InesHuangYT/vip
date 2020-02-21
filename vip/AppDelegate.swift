@@ -8,18 +8,32 @@
 //https:medium.com/%E5%BD%BC%E5%BE%97%E6%BD%98%E7%9A%84-swift-ios-app-%E9%96%8B%E7%99%BC%E5%95%8F%E9%A1%8C%E8%A7%A3%E7%AD%94%E9%9B%86/%E5%9C%A8-ios-12-%E5%AE%89%E8%A3%9D-xcode-11-%E9%96%8B%E7%99%BC%E7%9A%84-app-1c9f3c30986e
 import Firebase
 import UIKit
+import GoogleSignIn
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
     var window : UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        let navigationBarBackColor = UINavigationBar.appearance()
+        navigationBarBackColor.tintColor = UIColor(red: 137/255, green: 136/255, blue: 128/255, alpha: 1)
+        
+        GIDSignIn.sharedInstance().clientID = "170838114822-7ulfotevovsmh9ntemqvorlm6e1v1leu.apps.googleusercontent.com"
         return true
     }
-
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {        
+        
+        return GIDSignIn.sharedInstance().handle(url)
+        
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     @available(iOS 13.0, *)
