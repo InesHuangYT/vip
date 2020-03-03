@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wsn-m7-EDh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GYL-Ti-wte">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -342,11 +342,21 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登入成功！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF2-k6-2GK">
-                                <rect key="frame" x="8" y="323.5" width="359" height="20.5"/>
+                                <rect key="frame" x="8" y="544" width="359" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRa-fl-Fdq">
+                                <rect key="frame" x="44" y="61" width="286" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="選擇寄送方式">
+                                    <color key="titleColor" red="0.53829288480000004" green="0.53505933279999995" blue="0.50309789179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deliverWaysWasPressed:" destination="GYL-Ti-wte" eventType="touchUpInside" id="ZQU-4Z-5rW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93459850550000001" green="0.95914202930000003" blue="0.90638643500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -354,12 +364,13 @@
                             <constraint firstItem="dDa-Az-Qx0" firstAttribute="centerX" secondItem="WF2-k6-2GK" secondAttribute="centerX" id="NzM-PZ-sQo"/>
                             <constraint firstItem="WF2-k6-2GK" firstAttribute="leading" secondItem="DFz-yW-z2G" secondAttribute="leading" constant="8" id="Qkr-MR-q5X"/>
                             <constraint firstItem="DFz-yW-z2G" firstAttribute="bottom" secondItem="dDa-Az-Qx0" secondAttribute="bottom" constant="33" id="o70-Bb-FMr"/>
-                            <constraint firstItem="WF2-k6-2GK" firstAttribute="centerY" secondItem="6bl-Dz-JYk" secondAttribute="centerY" id="sug-Cp-jKL"/>
+                            <constraint firstItem="WF2-k6-2GK" firstAttribute="centerY" secondItem="6bl-Dz-JYk" secondAttribute="centerY" constant="220.75" id="sug-Cp-jKL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DFz-yW-z2G"/>
                     </view>
                     <connections>
                         <outlet property="currentUserlabel" destination="WF2-k6-2GK" id="8h0-u4-HWU"/>
+                        <outlet property="selectShow" destination="gRa-fl-Fdq" id="dsu-qG-kPf"/>
                         <outlet property="signOutButton" destination="dDa-Az-Qx0" id="zhD-PY-hVw"/>
                     </connections>
                 </viewController>
