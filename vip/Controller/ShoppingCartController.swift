@@ -14,6 +14,8 @@ class ShoppingCartController : UIViewController, UITableViewDelegate, UITableVie
     
     
     @IBOutlet weak var tableview: UITableView!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ class ShoppingCartController : UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
+        //Count Products
         return 1
     }
     
