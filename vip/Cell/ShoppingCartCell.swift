@@ -11,6 +11,26 @@ import UIKit
 
 class ShoppingCartCell: UITableViewCell{
     
+    @IBOutlet weak var ProductImage: UIImageView!
+    @IBOutlet weak var ProductName: UILabel!
+    @IBOutlet weak var Price: UILabel!
+    
+    
+    @IBAction func InfoButton(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func LikeButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func checkBoxTapped(_ sender: UIButton){
+           if sender.isSelected{
+               print("Selected!")
+               sender.isSelected = false
+           }else{
+               sender.isSelected = true
+           }
+       }
     
     
 }
