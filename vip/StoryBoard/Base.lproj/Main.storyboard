@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bGi-w6-AI4">
+
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hTx-Jz-sbC"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="J6X-T4-gLx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUm-EA-0bR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -342,11 +344,21 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登入成功！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WF2-k6-2GK">
-                                <rect key="frame" x="8" y="323.5" width="359" height="20.5"/>
+                                <rect key="frame" x="8" y="544" width="359" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRa-fl-Fdq">
+                                <rect key="frame" x="44" y="61" width="286" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="選擇寄送方式">
+                                    <color key="titleColor" red="0.53829288480000004" green="0.53505933279999995" blue="0.50309789179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deliverWaysWasPressed:" destination="GYL-Ti-wte" eventType="touchUpInside" id="ZQU-4Z-5rW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93459850550000001" green="0.95914202930000003" blue="0.90638643500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -354,12 +366,13 @@
                             <constraint firstItem="dDa-Az-Qx0" firstAttribute="centerX" secondItem="WF2-k6-2GK" secondAttribute="centerX" id="NzM-PZ-sQo"/>
                             <constraint firstItem="WF2-k6-2GK" firstAttribute="leading" secondItem="DFz-yW-z2G" secondAttribute="leading" constant="8" id="Qkr-MR-q5X"/>
                             <constraint firstItem="DFz-yW-z2G" firstAttribute="bottom" secondItem="dDa-Az-Qx0" secondAttribute="bottom" constant="33" id="o70-Bb-FMr"/>
-                            <constraint firstItem="WF2-k6-2GK" firstAttribute="centerY" secondItem="6bl-Dz-JYk" secondAttribute="centerY" id="sug-Cp-jKL"/>
+                            <constraint firstItem="WF2-k6-2GK" firstAttribute="centerY" secondItem="6bl-Dz-JYk" secondAttribute="centerY" constant="220.75" id="sug-Cp-jKL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DFz-yW-z2G"/>
                     </view>
                     <connections>
                         <outlet property="currentUserlabel" destination="WF2-k6-2GK" id="8h0-u4-HWU"/>
+                        <outlet property="selectShow" destination="gRa-fl-Fdq" id="dsu-qG-kPf"/>
                         <outlet property="signOutButton" destination="dDa-Az-Qx0" id="zhD-PY-hVw"/>
                     </connections>
                 </viewController>
@@ -368,16 +381,18 @@
             <point key="canvasLocation" x="1621.5999999999999" y="125.4872563718141"/>
         </scene>
         <!--Shopping Cart-->
-        <scene sceneID="75Z-3V-cxG">
+        <scene sceneID="MT1-Sy-YFd">
             <objects>
-                <viewController title="Shopping Cart" id="GML-k8-0b3" customClass="ShoppingCartController" customModule="vip" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uU3-lq-J91">
+                <viewController title="Shopping Cart" id="6tf-Qh-BfV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i3r-FM-bYb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="SideBar" translatesAutoresizingMaskIntoConstraints="NO" id="dyc-hj-r8A">
-                                <rect key="frame" x="-4" y="0.0" width="51" height="700"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="SideBar" translatesAutoresizingMaskIntoConstraints="NO" id="RBd-sE-XJn">
+                                <rect key="frame" x="-2" y="0.0" width="28" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7b-TK-O0T">
                                 <rect key="frame" x="44" y="0.0" width="331" height="431"/>
                                 <subviews>
@@ -405,28 +420,34 @@
                                                         </button>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HaN-tf-sXm">
                                                             <rect key="frame" x="53" y="4" width="138" height="112"/>
+
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="138" id="UXs-5A-1vR"/>
+                                                                <constraint firstAttribute="width" constant="130" id="vob-s3-1j9"/>
                                                             </constraints>
                                                         </imageView>
+
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="咖啡組合" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-g8-h9q" userLabel="ProductName">
                                                             <rect key="frame" x="199" y="18" width="82" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="G14-ll-8tl"/>
                                                             </constraints>
+
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$1500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taS-rF-BMf" userLabel="Price">
                                                             <rect key="frame" x="199" y="50" width="70" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="0Av-kp-Tpq"/>
                                                             </constraints>
+
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+
                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFC-kH-x0U" userLabel="Information">
                                                             <rect key="frame" x="192" y="82" width="77" height="34"/>
                                                             <state key="normal" image="Information"/>
@@ -440,9 +461,12 @@
                                                             <connections>
                                                                 <action selector="LikeButton:" destination="qvR-Xa-TkC" eventType="touchUpInside" id="qWs-p8-msC"/>
                                                             </connections>
+
                                                         </button>
                                                     </subviews>
+                                                    <color key="backgroundColor" red="0.86058692120000002" green="1" blue="0.85274813790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+
                                                         <constraint firstItem="uhv-B2-8eE" firstAttribute="centerY" secondItem="FsA-G2-jYY" secondAttribute="centerY" id="1os-Zy-OQa"/>
                                                         <constraint firstItem="lFC-kH-x0U" firstAttribute="bottom" secondItem="HaN-tf-sXm" secondAttribute="bottom" id="58M-PV-lUH"/>
                                                         <constraint firstItem="HaN-tf-sXm" firstAttribute="centerY" secondItem="uhv-B2-8eE" secondAttribute="centerY" id="8T5-6A-S4H"/>
@@ -485,6 +509,7 @@
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="oox-hR-hNv">
                                 <rect key="frame" x="1" y="603" width="41" height="61"/>
+
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hf-VE-fPR" userLabel="ListBtn">
                                 <rect key="frame" x="6" y="0.0" width="31" height="35"/>
@@ -516,6 +541,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.86058692120000002" green="1" blue="0.85274813790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                          
                             <constraint firstItem="z7b-TK-O0T" firstAttribute="leading" secondItem="VbU-uh-kJb" secondAttribute="leading" constant="44" id="2SU-qt-Z73"/>
                             <constraint firstItem="oox-hR-hNv" firstAttribute="centerX" secondItem="dyc-hj-r8A" secondAttribute="centerX" id="3P3-VP-ook"/>
                             <constraint firstItem="oox-hR-hNv" firstAttribute="leading" secondItem="VbU-uh-kJb" secondAttribute="leading" constant="1" id="81t-7K-1bp"/>
@@ -538,17 +564,14 @@
                             <constraint firstItem="9hf-VE-fPR" firstAttribute="top" secondItem="dyc-hj-r8A" secondAttribute="top" id="lQ9-jo-gzu"/>
                             <constraint firstItem="z7b-TK-O0T" firstAttribute="top" secondItem="VbU-uh-kJb" secondAttribute="top" id="uJJ-0L-4m4"/>
                             <constraint firstItem="VbU-uh-kJb" firstAttribute="bottom" secondItem="z7b-TK-O0T" secondAttribute="bottom" constant="236" id="yR3-1J-SSI"/>
+
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VbU-uh-kJb"/>
+                        <viewLayoutGuide key="safeArea" id="dFR-Y6-r5J"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O45-Yt-JfT"/>
-                    <connections>
-                        <outlet property="tableview" destination="Lpj-rS-C9a" id="faJ-Qu-AmD"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cDi-ZK-veO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BzH-xN-fCy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="1008.8455772113944"/>
+            <point key="canvasLocation" x="-183.19999999999999" y="1008.8455772113944"/>
         </scene>
         <!--Create Product Data-->
         <scene sceneID="bNY-c4-FEs">
@@ -620,16 +643,18 @@
         </scene>
     </scenes>
     <resources>
+
         <image name="CreateData" width="253" height="86"/>
         <image name="Delete" width="253" height="86"/>
         <image name="Information" width="77" height="39"/>
         <image name="Like" width="28" height="28"/>
         <image name="List_button" width="18" height="11"/>
+
         <image name="Order" width="253" height="86"/>
         <image name="SideBar" width="50" height="812"/>
-        <image name="check" width="33" height="33"/>
         <image name="confirm" width="147" height="39"/>
         <image name="google" width="41" height="40"/>
+        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="logo" width="175" height="166"/>
         <image name="logoAPP" width="175" height="166"/>
         <image name="sign up" width="245" height="39"/>
