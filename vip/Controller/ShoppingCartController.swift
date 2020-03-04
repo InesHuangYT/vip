@@ -14,6 +14,8 @@ class ShoppingCartController : UIViewController, UITableViewDelegate, UITableVie
     
     
     @IBOutlet weak var tableview: UITableView!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,8 @@ class ShoppingCartController : UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-        return 1
+        //Count Products
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,15 +40,14 @@ class ShoppingCartController : UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    
-    
-    @IBAction func checkBoxTapped(_ sender: UIButton){
-        if sender.isSelected{
-            print("Selected!")
-            sender.isSelected = false
-        }else{
-            sender.isSelected = true
-        }
+    @IBAction func ListBtnTapped(_ sender: Any) {
     }
+    
+    @IBAction func OrderBtn(_ sender: Any) {
+    }
+    
+    @IBAction func DeleteBtn(_ sender: Any) {
+    }
+    
     
 }
