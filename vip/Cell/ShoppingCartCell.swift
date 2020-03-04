@@ -24,13 +24,11 @@ class ShoppingCartCell: UITableViewCell{
     }
     
     @IBAction func checkBoxTapped(_ sender: UIButton){
-           if sender.isSelected{
-               print("Selected!")
-               sender.isSelected = false
-           }else{
-               sender.isSelected = true
-           }
-       }
-    
-    
+        if sender.isSelected{
+            print("Selected!")
+            sender.isSelected = false
+        }else{
+            sender.isSelected = true
+        }
+    }
 }

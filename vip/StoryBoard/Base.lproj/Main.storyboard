@@ -400,11 +400,10 @@
                                                             <state key="normal" image="uncheck"/>
                                                             <state key="selected" image="check"/>
                                                             <connections>
-                                                                <action selector="checkBoxTapped:" destination="GML-k8-0b3" eventType="touchUpInside" id="4ez-Jp-mbE"/>
-                                                                <action selector="checkBoxTapped:" destination="qvR-Xa-TkC" eventType="touchUpInside" id="GpA-og-cXC"/>
+                                                                <action selector="checkBoxTapped:" destination="qvR-Xa-TkC" eventType="touchUpInside" id="ljJ-av-DN3"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HaN-tf-sXm">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HaN-tf-sXm">
                                                             <rect key="frame" x="53" y="4" width="138" height="112"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="138" id="UXs-5A-1vR"/>
@@ -487,6 +486,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="oox-hR-hNv">
                                 <rect key="frame" x="1" y="603" width="41" height="61"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hf-VE-fPR" userLabel="ListBtn">
+                                <rect key="frame" x="6" y="0.0" width="30" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="List_button"/>
+                                <connections>
+                                    <action selector="ListBtnTapped:" destination="GML-k8-0b3" eventType="touchUpInside" id="e9r-0h-bkD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86058692120000002" green="1" blue="0.85274813790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -518,6 +525,7 @@
     <resources>
         <image name="Information" width="77" height="39"/>
         <image name="Like" width="28" height="28"/>
+        <image name="List_button" width="18" height="11"/>
         <image name="SideBar" width="50" height="812"/>
         <image name="check" width="33" height="33"/>
         <image name="confirm" width="147" height="39"/>

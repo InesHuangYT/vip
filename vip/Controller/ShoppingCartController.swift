@@ -32,13 +32,17 @@ class ShoppingCartController : UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         //Count Products
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
         return cell
     }
+    
+    @IBAction func ListBtnTapped(_ sender: Any) {
+    }
+    
     
     
     
