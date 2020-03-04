@@ -20,11 +20,10 @@
 		B0E618EA2400042800EB6E74 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E618E92400042800EB6E74 /* Protocol.swift */; };
 		B0E618EB240EB08000EB6E74 /* Pods_vip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C404FB32D82B820BA2907F /* Pods_vip.framework */; };
 		B0E618EC240EB08000EB6E74 /* Pods_vip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48C404FB32D82B820BA2907F /* Pods_vip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0E618EE240FD58400EB6E74 /* SignUpLogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E618ED240FD58400EB6E74 /* SignUpLogIn.storyboard */; };
 		C0164267240E0C2A00B760B2 /* ShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164266240E0C2A00B760B2 /* ShoppingCartController.swift */; };
-
 		C01A7AF1240FBF1B00E99EED /* CreateProductDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A7AF0240FBF1B00E99EED /* CreateProductDataController.swift */; };
 		C01F4AA7240EA844003E0AAF /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F4AA6240EA843003E0AAF /* ShoppingCartCell.swift */; };
-		CFA7E67D634CBC463A86197A /* Pods_vip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C404FB32D82B820BA2907F /* Pods_vip.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +56,7 @@
 		B0E0A31923F9E45900BE8ECC /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		B0E618E523FD3C8000EB6E74 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		B0E618E92400042800EB6E74 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		B0E618ED240FD58400EB6E74 /* SignUpLogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpLogIn.storyboard; sourceTree = "<group>"; };
 		C0164266240E0C2A00B760B2 /* ShoppingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartController.swift; sourceTree = "<group>"; };
 		C01A7AF0240FBF1B00E99EED /* CreateProductDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductDataController.swift; sourceTree = "<group>"; };
 		C01F4AA6240EA843003E0AAF /* ShoppingCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartCell.swift; sourceTree = "<group>"; };
@@ -144,6 +144,7 @@
 			children = (
 				B087D23123F56436001FAC9A /* Main.storyboard */,
 				B087D23623F56439001FAC9A /* LaunchScreen.storyboard */,
+				B0E618ED240FD58400EB6E74 /* SignUpLogIn.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -219,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B087D23823F56439001FAC9A /* LaunchScreen.storyboard in Resources */,
+				B0E618EE240FD58400EB6E74 /* SignUpLogIn.storyboard in Resources */,
 				B0C77BB723F97A9100B8E5B7 /* GoogleService-Info.plist in Resources */,
 				B087D23523F56439001FAC9A /* Assets.xcassets in Resources */,
 				B087D23323F56436001FAC9A /* Main.storyboard in Resources */,
