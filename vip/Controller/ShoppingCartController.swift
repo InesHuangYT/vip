@@ -43,8 +43,11 @@ class ShoppingCartController : UIViewController, UITableViewDelegate, UITableVie
     @IBAction func ListBtnTapped(_ sender: Any) {
     }
     
+    @IBAction func OrderBtn(_ sender: Any) {
+    }
     
-    
+    @IBAction func DeleteBtn(_ sender: Any) {
+    }
     
     
 }
