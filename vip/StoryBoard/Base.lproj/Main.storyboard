@@ -395,7 +395,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="331" height="120"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-B2-8eE" userLabel="CheckBox">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-B2-8eE" userLabel="CheckBox">
                                                             <rect key="frame" x="10" y="44" width="33" height="32"/>
                                                             <state key="normal" image="uncheck"/>
                                                             <state key="selected" image="check"/>
@@ -403,13 +403,13 @@
                                                                 <action selector="checkBoxTapped:" destination="qvR-Xa-TkC" eventType="touchUpInside" id="ljJ-av-DN3"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HaN-tf-sXm">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HaN-tf-sXm">
                                                             <rect key="frame" x="53" y="4" width="138" height="112"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="138" id="UXs-5A-1vR"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="咖啡組合" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-g8-h9q" userLabel="ProductName">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="咖啡組合" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-g8-h9q" userLabel="ProductName">
                                                             <rect key="frame" x="199" y="18" width="82" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="G14-ll-8tl"/>
@@ -418,7 +418,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taS-rF-BMf" userLabel="Price">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$1500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taS-rF-BMf" userLabel="Price">
                                                             <rect key="frame" x="199" y="50" width="70" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="0Av-kp-Tpq"/>
@@ -427,15 +427,15 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFC-kH-x0U" userLabel="Information">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFC-kH-x0U" userLabel="Information">
                                                             <rect key="frame" x="192" y="82" width="77" height="34"/>
                                                             <state key="normal" image="Information"/>
                                                             <connections>
                                                                 <action selector="InfoButton:" destination="qvR-Xa-TkC" eventType="touchUpInside" id="1py-LS-ceg"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4S-qm-LMo" userLabel="Like">
-                                                            <rect key="frame" x="275" y="85" width="28" height="28"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4S-qm-LMo" userLabel="Like">
+                                                            <rect key="frame" x="275" y="71" width="28" height="56"/>
                                                             <state key="normal" image="Like"/>
                                                             <connections>
                                                                 <action selector="LikeButton:" destination="qvR-Xa-TkC" eventType="touchUpInside" id="qWs-p8-msC"/>
@@ -553,7 +553,7 @@
         <!--Create Product Data-->
         <scene sceneID="bNY-c4-FEs">
             <objects>
-                <viewController id="bGi-w6-AI4" userLabel="Create Product Data" sceneMemberID="viewController">
+                <viewController id="bGi-w6-AI4" userLabel="Create Product Data" customClass="CreateProductDataController" customModule="vip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HP3-MJ-d4L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
