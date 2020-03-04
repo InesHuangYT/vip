@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GqD-2y-k1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183.19999999999999" y="1008.8455772113944"/>
+            <point key="canvasLocation" x="-382" y="721"/>
         </scene>
         <!--Create Product Data-->
         <scene sceneID="VCN-Y0-ZHO">
@@ -170,59 +170,147 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAPP" translatesAutoresizingMaskIntoConstraints="NO" id="Pya-A0-ypj" userLabel="Upload image">
-                                <rect key="frame" x="33" y="56" width="309" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoAPP" translatesAutoresizingMaskIntoConstraints="NO" id="Pya-A0-ypj" userLabel="Upload image">
+                                <rect key="frame" x="33" y="8" width="309" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProductName :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-Hd-RgE" userLabel="ProductName">
-                                <rect key="frame" x="16" y="310" width="130" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商品名稱 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-Hd-RgE" userLabel="ProductName">
+                                <rect key="frame" x="24" y="230" width="92" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAZ-M9-9Yp" userLabel="Price">
-                                <rect key="frame" x="54" y="394" width="54" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="產品描述：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjS-a5-vEd" userLabel="ProductName">
+                                <rect key="frame" x="24" y="304" width="102" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="weZ-fG-eQH" userLabel="txtProductName">
-                                <rect key="frame" x="164" y="305" width="178" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="產品評價：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hh4-Mj-0Mh" userLabel="ProductName">
+                                <rect key="frame" x="24" y="341" width="102" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商家評價：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-lC-jPf" userLabel="ProductName">
+                                <rect key="frame" x="24" y="378" width="102" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="使用方式：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3T-zQ-ffv" userLabel="ProductName">
+                                <rect key="frame" x="24" y="526" width="102" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="有效日期：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kat-hy-JvF" userLabel="ProductName">
+                                <rect key="frame" x="24" y="489" width="102" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="其他資訊：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4b-Tx-xRc" userLabel="ProductName">
+                                <rect key="frame" x="24" y="563" width="102" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="製造日期：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFH-ZE-At7" userLabel="ProductName">
+                                <rect key="frame" x="24" y="452" width="102" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="價格 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAZ-M9-9Yp" userLabel="Price">
+                                <rect key="frame" x="45" y="267" width="51" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="weZ-fG-eQH" userLabel="txtProductName">
+                                <rect key="frame" x="134" y="225" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zez-a6-0kc" userLabel="txtPrice">
-                                <rect key="frame" x="164" y="389" width="178" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zez-a6-0kc" userLabel="txtPrice">
+                                <rect key="frame" x="134" y="262" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hiu-9k-iLs" userLabel="CreateData">
-                                <rect key="frame" x="113" y="508" width="149" height="52"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lx-HU-R9S" userLabel="txtPrice">
+                                <rect key="frame" x="134" y="299" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商品須知：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-of-3At" userLabel="ProductName">
+                                <rect key="frame" x="24" y="415" width="102" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wdH-e3-eJ9" userLabel="txtPrice">
+                                <rect key="frame" x="134" y="336" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D6U-MA-o3x" userLabel="txtPrice">
+                                <rect key="frame" x="134" y="373" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2wd-kX-ofq" userLabel="txtPrice">
+                                <rect key="frame" x="134" y="410" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9c-ju-PbW" userLabel="txtPrice">
+                                <rect key="frame" x="134" y="447" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yLk-le-fLb" userLabel="txtPrice">
+                                <rect key="frame" x="134" y="484" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qo7-Bw-4lv" userLabel="txtPrice">
+                                <rect key="frame" x="134" y="521" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAP-Tk-96k" userLabel="txtPrice">
+                                <rect key="frame" x="134" y="558" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hiu-9k-iLs" userLabel="CreateData">
+                                <rect key="frame" x="103" y="604" width="149" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="CreateData"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86058692120000002" green="1" blue="0.85274813790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="lAr-Hd-RgE" firstAttribute="centerY" secondItem="weZ-fG-eQH" secondAttribute="centerY" id="0Rk-04-gZa"/>
-                            <constraint firstItem="lAr-Hd-RgE" firstAttribute="leading" secondItem="ZEd-ez-Uo0" secondAttribute="leadingMargin" id="0d9-Zb-Tny"/>
-                            <constraint firstItem="Pya-A0-ypj" firstAttribute="leading" secondItem="Q29-jn-6Li" secondAttribute="leading" constant="33" id="27Y-G7-OcE"/>
-                            <constraint firstItem="lAr-Hd-RgE" firstAttribute="centerX" secondItem="YAZ-M9-9Yp" secondAttribute="centerX" id="83d-Mg-TLj"/>
-                            <constraint firstItem="lAr-Hd-RgE" firstAttribute="top" secondItem="Pya-A0-ypj" secondAttribute="bottom" constant="54" id="HmN-ge-rTe"/>
-                            <constraint firstItem="Pya-A0-ypj" firstAttribute="top" secondItem="Q29-jn-6Li" secondAttribute="top" constant="56" id="HxL-MV-y65"/>
-                            <constraint firstItem="Pya-A0-ypj" firstAttribute="centerX" secondItem="Hiu-9k-iLs" secondAttribute="centerX" id="IZ8-GQ-zbg"/>
-                            <constraint firstItem="Pya-A0-ypj" firstAttribute="trailing" secondItem="weZ-fG-eQH" secondAttribute="trailing" id="LJZ-3t-AHZ"/>
-                            <constraint firstItem="YAZ-M9-9Yp" firstAttribute="centerY" secondItem="zez-a6-0kc" secondAttribute="centerY" id="MLY-CA-YVj"/>
-                            <constraint firstItem="weZ-fG-eQH" firstAttribute="top" secondItem="Pya-A0-ypj" secondAttribute="bottom" constant="49" id="MV6-WI-8fU"/>
-                            <constraint firstItem="weZ-fG-eQH" firstAttribute="leading" secondItem="lAr-Hd-RgE" secondAttribute="trailing" constant="18" id="MqV-gk-47b"/>
-                            <constraint firstItem="Q29-jn-6Li" firstAttribute="bottom" secondItem="YAZ-M9-9Yp" secondAttribute="bottom" constant="249" id="TCn-id-jDb"/>
-                            <constraint firstItem="Pya-A0-ypj" firstAttribute="centerX" secondItem="ZEd-ez-Uo0" secondAttribute="centerX" id="bgP-6h-mlv"/>
-                            <constraint firstItem="Q29-jn-6Li" firstAttribute="bottom" secondItem="Hiu-9k-iLs" secondAttribute="bottom" constant="107" id="g5K-LT-jOF"/>
-                            <constraint firstItem="weZ-fG-eQH" firstAttribute="trailing" secondItem="zez-a6-0kc" secondAttribute="trailing" id="iSR-cM-DU1"/>
-                            <constraint firstItem="YAZ-M9-9Yp" firstAttribute="top" secondItem="lAr-Hd-RgE" secondAttribute="bottom" constant="60" id="kyf-o9-xah"/>
-                            <constraint firstItem="zez-a6-0kc" firstAttribute="top" secondItem="weZ-fG-eQH" secondAttribute="bottom" constant="50" id="nqo-cH-XjV"/>
-                            <constraint firstItem="Hiu-9k-iLs" firstAttribute="top" secondItem="zez-a6-0kc" secondAttribute="bottom" constant="85" id="qfY-t7-YTD"/>
-                            <constraint firstItem="weZ-fG-eQH" firstAttribute="leading" secondItem="zez-a6-0kc" secondAttribute="leading" id="tcW-YM-5Eu"/>
-                            <constraint firstItem="Hiu-9k-iLs" firstAttribute="leading" secondItem="Q29-jn-6Li" secondAttribute="leading" constant="113" id="zIn-r8-mCz"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Q29-jn-6Li"/>
                     </view>
                     <connections>
@@ -231,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dts-Yh-4Kj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1188" y="1008.8455772113944"/>
+            <point key="canvasLocation" x="-1114" y="721"/>
         </scene>
     </scenes>
     <resources>
