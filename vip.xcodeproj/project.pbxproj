@@ -18,7 +18,10 @@
 		B0E0A31A23F9E45900BE8ECC /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E0A31923F9E45900BE8ECC /* SignUpController.swift */; };
 		B0E618E623FD3C8000EB6E74 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E618E523FD3C8000EB6E74 /* HomeController.swift */; };
 		B0E618EA2400042800EB6E74 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E618E92400042800EB6E74 /* Protocol.swift */; };
+		B0E618EB240EB08000EB6E74 /* Pods_vip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C404FB32D82B820BA2907F /* Pods_vip.framework */; };
+		B0E618EC240EB08000EB6E74 /* Pods_vip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48C404FB32D82B820BA2907F /* Pods_vip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C0164267240E0C2A00B760B2 /* ShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164266240E0C2A00B760B2 /* ShoppingCartController.swift */; };
+
 		C01A7AF1240FBF1B00E99EED /* CreateProductDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A7AF0240FBF1B00E99EED /* CreateProductDataController.swift */; };
 		C01F4AA7240EA844003E0AAF /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F4AA6240EA843003E0AAF /* ShoppingCartCell.swift */; };
 		CFA7E67D634CBC463A86197A /* Pods_vip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C404FB32D82B820BA2907F /* Pods_vip.framework */; };
@@ -31,6 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B0E618EC240EB08000EB6E74 /* Pods_vip.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFA7E67D634CBC463A86197A /* Pods_vip.framework in Frameworks */,
+				B0E618EB240EB08000EB6E74 /* Pods_vip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 45BE09659B28CB1602AFED1A /* Pods-vip.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NATB5LN22;
@@ -461,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D35856650B86EBD34153C837 /* Pods-vip.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6NATB5LN22;
