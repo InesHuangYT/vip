@@ -20,11 +20,10 @@
 		B0E618EA2400042800EB6E74 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E618E92400042800EB6E74 /* Protocol.swift */; };
 		B0E618EB240EB08000EB6E74 /* Pods_vip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C404FB32D82B820BA2907F /* Pods_vip.framework */; };
 		B0E618EC240EB08000EB6E74 /* Pods_vip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48C404FB32D82B820BA2907F /* Pods_vip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B0E618EE240FD58400EB6E74 /* SignUpLogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E618ED240FD58400EB6E74 /* SignUpLogIn.storyboard */; };
 		C0164267240E0C2A00B760B2 /* ShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164266240E0C2A00B760B2 /* ShoppingCartController.swift */; };
 		C01A7AF1240FBF1B00E99EED /* CreateProductDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01A7AF0240FBF1B00E99EED /* CreateProductDataController.swift */; };
 		C01F4AA7240EA844003E0AAF /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01F4AA6240EA843003E0AAF /* ShoppingCartCell.swift */; };
-		C0A511D8240FCFF100BABB14 /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A511D7240FCFF100BABB14 /* ShoppingCart.storyboard */; };
+		C0A511D6240FCC2B00BABB14 /* ShoppingCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A511D5240FCC2B00BABB14 /* ShoppingCart.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,11 +56,10 @@
 		B0E0A31923F9E45900BE8ECC /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		B0E618E523FD3C8000EB6E74 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		B0E618E92400042800EB6E74 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
-		B0E618ED240FD58400EB6E74 /* SignUpLogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpLogIn.storyboard; sourceTree = "<group>"; };
 		C0164266240E0C2A00B760B2 /* ShoppingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartController.swift; sourceTree = "<group>"; };
 		C01A7AF0240FBF1B00E99EED /* CreateProductDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductDataController.swift; sourceTree = "<group>"; };
 		C01F4AA6240EA843003E0AAF /* ShoppingCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartCell.swift; sourceTree = "<group>"; };
-		C0A511D7240FCFF100BABB14 /* ShoppingCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
+		C0A511D5240FCC2B00BABB14 /* ShoppingCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingCart.storyboard; sourceTree = "<group>"; };
 		D35856650B86EBD34153C837 /* Pods-vip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vip.release.xcconfig"; path = "Target Support Files/Pods-vip/Pods-vip.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,9 +144,7 @@
 			children = (
 				B087D23123F56436001FAC9A /* Main.storyboard */,
 				B087D23623F56439001FAC9A /* LaunchScreen.storyboard */,
-				C0A511D7240FCFF100BABB14 /* ShoppingCart.storyboard */,
-				B0E618ED240FD58400EB6E74 /* SignUpLogIn.storyboard */,
-
+				C0A511D5240FCC2B00BABB14 /* ShoppingCart.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -223,11 +219,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A511D6240FCC2B00BABB14 /* ShoppingCart.storyboard in Resources */,
 				B087D23823F56439001FAC9A /* LaunchScreen.storyboard in Resources */,
-				B0E618EE240FD58400EB6E74 /* SignUpLogIn.storyboard in Resources */,
 				B0C77BB723F97A9100B8E5B7 /* GoogleService-Info.plist in Resources */,
 				B087D23523F56439001FAC9A /* Assets.xcassets in Resources */,
-				C0A511D8240FCFF100BABB14 /* ShoppingCart.storyboard in Resources */,
 				B087D23323F56436001FAC9A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
