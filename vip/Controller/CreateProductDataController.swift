@@ -13,7 +13,7 @@ import Firebase
 
 class CreateProductDataController: UIViewController {
     
-    
+   
     
     
     
