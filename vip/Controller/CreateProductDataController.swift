@@ -32,6 +32,13 @@ class CreateProductDataController: UIViewController {
         
     }
     
+    static func storyboardInstance() -> CreateProductDataController? {
+               let storyboard = UIStoryboard(name:
+                "CreateProductDataController", bundle: nil)
+        return storyboard.instantiateInitialViewController() as? CreateProductDataController
+               
+         }
+    
     @IBAction func CreatBtn(_ sender: Any) {
         
         let id = UUID()
