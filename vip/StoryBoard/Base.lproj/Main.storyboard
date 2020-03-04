@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
@@ -386,10 +387,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="SideBar" translatesAutoresizingMaskIntoConstraints="NO" id="RBd-sE-XJn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="SideBar" translatesAutoresizingMaskIntoConstraints="NO" id="RBd-sE-XJn">
                                 <rect key="frame" x="-2" y="0.0" width="28" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z7b-TK-O0T">
                                 <rect key="frame" x="44" y="0.0" width="331" height="431"/>
                                 <subviews>
@@ -493,6 +494,7 @@
                                 </constraints>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="oox-hR-hNv">
+
                                 <rect key="frame" x="-133" y="498" width="175" height="166"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hf-VE-fPR" userLabel="ListBtn">
@@ -516,15 +518,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.86058692120000002" green="1" blue="0.85274813790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+
                             <constraint firstItem="zFg-XJ-Fzy" firstAttribute="centerX" secondItem="z7b-TK-O0T" secondAttribute="centerX" id="BZG-G4-pom"/>
                             <constraint firstAttribute="bottom" secondItem="RvP-HZ-3C2" secondAttribute="bottom" constant="34" id="HTa-Iy-geb"/>
                             <constraint firstItem="9hf-VE-fPR" firstAttribute="centerX" secondItem="oox-hR-hNv" secondAttribute="centerX" id="Lf9-Bj-GBe"/>
                             <constraint firstAttribute="trailing" secondItem="oox-hR-hNv" secondAttribute="trailing" constant="333" id="Sav-I1-jW6"/>
                             <constraint firstAttribute="bottom" secondItem="oox-hR-hNv" secondAttribute="bottom" constant="3" id="Ukh-57-f8q"/>
                             <constraint firstItem="zFg-XJ-Fzy" firstAttribute="top" secondItem="z7b-TK-O0T" secondAttribute="bottom" constant="46" id="WVq-tV-Tb1"/>
+
+
                             <constraint firstItem="zFg-XJ-Fzy" firstAttribute="trailing" secondItem="RvP-HZ-3C2" secondAttribute="trailing" id="XaE-R2-HHk"/>
                             <constraint firstItem="RvP-HZ-3C2" firstAttribute="top" secondItem="zFg-XJ-Fzy" secondAttribute="bottom" constant="24" id="YCS-Tn-pdk"/>
                             <constraint firstItem="zFg-XJ-Fzy" firstAttribute="leading" secondItem="RvP-HZ-3C2" secondAttribute="leading" id="hfH-wG-OQZ"/>
+
                             <constraint firstAttribute="bottom" secondItem="z7b-TK-O0T" secondAttribute="bottom" constant="236" id="yR3-1J-SSI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dFR-Y6-r5J"/>
