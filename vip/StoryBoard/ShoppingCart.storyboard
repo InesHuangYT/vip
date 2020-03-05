@@ -328,6 +328,7 @@
                         <outlet property="ProductEvaluation" destination="9tR-1u-4Gl" id="mvj-xk-fLi"/>
                         <outlet property="ProductName" destination="TgM-3e-77v" id="kUo-Eu-una"/>
                         <outlet property="SellerEvaluation" destination="hKG-JB-jI5" id="ZYY-Nq-2bQ"/>
+                        <outlet property="productImage" destination="DHB-U1-tZU" id="RF1-Xp-FWm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6X-sE-SF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -23,13 +23,23 @@ class CreateProductDataController: UIViewController {
     @IBOutlet weak var ExpDate: UITextField!
     @IBOutlet weak var Method: UITextField!
     @IBOutlet weak var OtherInfo: UITextField!
+    @IBOutlet weak var productImage: UIImageView!
+    
     var ref: DatabaseReference!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.addTarget(self, action: #selector(CreateProductDataController.openGallery(tapGesture:)))
+        productImage.isUserInteractionEnabled = true
+        productImage.addGestureRecognizer(tapGesture)
         
+    }
+    
+    @objc func openGallery(tapGesture: UITapGestureRecognizer){
+        print("test")
     }
     
 //    static func storyboardInstance() -> CreateProductDataController? {
