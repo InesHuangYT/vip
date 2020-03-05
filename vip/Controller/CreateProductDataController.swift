@@ -24,6 +24,7 @@ class CreateProductDataController: UIViewController {
     @IBOutlet weak var Method: UITextField!
     @IBOutlet weak var OtherInfo: UITextField!
     @IBOutlet weak var productImage: UIImageView!
+    let imagePicker = UIImagePickerController()
     
     var ref: DatabaseReference!
 
@@ -40,6 +41,7 @@ class CreateProductDataController: UIViewController {
     
     @objc func openGallery(tapGesture: UITapGestureRecognizer){
         print("test")
+        self.setImagePicker()
     }
     
 //    static func storyboardInstance() -> CreateProductDataController? {
@@ -69,6 +71,25 @@ class CreateProductDataController: UIViewController {
     
         
     }
-    
-    
 }
+
+extension CreateProductDataController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+       func setImagePicker(){
+           if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.delegate = self
+            imagePicker.isEditing = true
+            
+            self.present(imagePicker, animated: true, completion: nil)
+               
+           }
+       }
+    
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]){
+        
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        productImage.image = image
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+   }
