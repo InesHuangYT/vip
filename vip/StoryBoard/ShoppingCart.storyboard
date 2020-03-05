@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4r-yh-m8r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,7 +11,7 @@
         <!--Shopping Cart-->
         <scene sceneID="M8R-ev-Wxw">
             <objects>
-                <viewController title="Shopping Cart" id="j4r-Fq-gBP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShoppingCart" title="Shopping Cart" id="j4r-Fq-gBP" customClass="CreateProductDataController" customModule="vip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FYc-1m-DLT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="-382" y="721"/>
         </scene>
-        <!--Create Product Data-->
+        <!--CreateProductData-->
         <scene sceneID="nqP-xD-Hh4">
             <objects>
-                <viewController id="j4r-yh-m8r" userLabel="Create Product Data" customClass="CreateProductDataController" customModule="vip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateProductData" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j4r-yh-m8r" userLabel="CreateProductData" customClass="CreateProductDataController" customModule="vip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ziq-A5-6bI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,16 +324,15 @@
                         <outlet property="Method" destination="iig-dt-hrS" id="JjU-0L-Joe"/>
                         <outlet property="Notice" destination="IAj-Mt-oDP" id="Ouj-Gj-bd2"/>
                         <outlet property="OtherInfo" destination="H2K-hL-QW7" id="uYt-vf-s0v"/>
-                        <outlet property="Price" destination="Klt-av-kkZ" id="zb8-Kx-SYK"/>
+                        <outlet property="Price" destination="Klt-av-kkZ" id="9nX-Um-t7z"/>
                         <outlet property="ProductEvaluation" destination="9tR-1u-4Gl" id="mvj-xk-fLi"/>
-                        <outlet property="ProductName" destination="TgM-3e-77v" id="Lr0-fc-Xwe"/>
+                        <outlet property="ProductName" destination="TgM-3e-77v" id="kUo-Eu-una"/>
                         <outlet property="SellerEvaluation" destination="hKG-JB-jI5" id="ZYY-Nq-2bQ"/>
-                        <outlet property="uploadImage" destination="DHB-U1-tZU" id="AQh-3p-LVK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6X-sE-SF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-383" y="-18"/>
+            <point key="canvasLocation" x="-383" y="0.0"/>
         </scene>
     </scenes>
     <resources>
