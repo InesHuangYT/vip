@@ -41,13 +41,22 @@ class CreateProductDataController: UIViewController {
     
     @IBAction func CreatBtn(_ sender: Any) {
         
-        let randomid = UUID()
-//        print(ProductName.text!)
-//        print(randomid)
         
 //         self.ref.child("Product/\(randomid)").setValue(["ProductName": ProductName.text ?? "Null", "Price": Price.text ?? "Null"])
+        var newData = ["ProductName": ProductName.text ?? "Null", "Price": Price.text ?? "Null", "Description": Description.text ?? "Null", "ProductEvaluation": ProductEvaluation.text ?? "Null", "SellerEvaluation": SellerEvaluation.text ?? "Null"]
         
-        self.ref.child("Product/\(randomid)").setValue(["ProductName": ProductName.text ?? "Null", "Price": Price.text ?? "Null", "Description": Description.text ?? "Null", "ProductEvaluation": ProductEvaluation.text ?? "Null", "SellerEvaluation": SellerEvaluation.text ?? "Null", "Notice": Notice.text ?? "Null", "ManuDate": ManuDate.text ?? "Null", "ExpDate": ExpDate.text ?? "Null", "Method": Method.text ?? "Null", "OtherInfo": OtherInfo.text ?? "Null"])
+        newData["Notice"] = Notice.text ?? "Null"
+        newData["ManuDate"] = ManuDate.text ?? "Null"
+        newData["ExpDate"] = ExpDate.text ?? "Null"
+        newData["Method"] = Method.text ?? "Null"
+        newData["OtherInfo"] = OtherInfo.text ?? "Null"
+        
+        self.ref.child("Product").childByAutoId().setValue(newData)
+        
+        print(newData)
+        print("creat product data successfully")
+        
+    
         
     }
     
