@@ -83,6 +83,7 @@ class CreateProductDataController: UIViewController {
                 storageRef.downloadURL(completion: {(url, error) in
                     if let imageURL = url?.absoluteString{
                         strURL = imageURL
+                        print("strURL: ",strURL)
                         print("imageURL:", imageURL)
                     }
                 })
