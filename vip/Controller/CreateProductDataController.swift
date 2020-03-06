@@ -56,8 +56,8 @@ class CreateProductDataController: UIViewController {
         
        let newData = productInfo()
        print(newData)
-       self.ref.child("Product").childByAutoId().setValue(newData)
-       print("creat product data successfully")
+//       self.ref.child("Product").childByAutoId().setValue(newData)
+//       print("creat product data successfully")
     }
     
     private func productInfo() -> Dictionary<String, String>{
@@ -72,7 +72,7 @@ class CreateProductDataController: UIViewController {
         newData["OtherInfo"] = OtherInfo.text ?? "Null"
         
         
-        let storageRef = Storage.storage().reference().child(ProductName.text!+".png")
+        let storageRef = Storage.storage().reference().child("ProductImage").child(ProductName.text!+".png")
         
         if let uploadData = self.productImage.image!.pngData(){
             storageRef.putData(uploadData, metadata: nil, completion: {(metadata, error) in
@@ -83,13 +83,18 @@ class CreateProductDataController: UIViewController {
                 storageRef.downloadURL(completion: {(url, error) in
                     if let imageURL = url?.absoluteString{
                         strURL = imageURL
-                        print("strURL: ",strURL)
+                        print("strURL1: ",strURL)
                         print("imageURL:", imageURL)
+                        
                     }
                 })
+                print("strURL2: ",strURL)
+                newData["ProductImageURL"] = strURL
             })
+            print("strURL3: ",strURL)
         }
-         newData["ProductImageURL"] = strURL
+        print("strURL4", strURL)
+        
         
         
         
