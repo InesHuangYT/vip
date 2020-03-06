@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseStorage
 
 
 class CreateProductDataController: UIViewController {
@@ -53,8 +54,14 @@ class CreateProductDataController: UIViewController {
     
     @IBAction func CreatBtn(_ sender: Any) {
         
+       let newData = productInfo()
+       print(newData)
+       self.ref.child("Product").childByAutoId().setValue(newData)
+       print("creat product data successfully")
+    }
+    
+    private func productInfo() -> Dictionary<String, String>{
         
-//         self.ref.child("Product/\(randomid)").setValue(["ProductName": ProductName.text ?? "Null", "Price": Price.text ?? "Null"])
         var newData = ["ProductName": ProductName.text ?? "Null", "Price": Price.text ?? "Null", "Description": Description.text ?? "Null", "ProductEvaluation": ProductEvaluation.text ?? "Null", "SellerEvaluation": SellerEvaluation.text ?? "Null"]
         
         newData["Notice"] = Notice.text ?? "Null"
@@ -63,15 +70,33 @@ class CreateProductDataController: UIViewController {
         newData["Method"] = Method.text ?? "Null"
         newData["OtherInfo"] = OtherInfo.text ?? "Null"
         
-        self.ref.child("Product").childByAutoId().setValue(newData)
         
-        print(newData)
-        print("creat product data successfully")
+        let storageRef = Storage.storage().reference().child(ProductName.text!+".png")
         
+        if let uploadData = self.productImage.image!.pngData(){
+            storageRef.putData(uploadData, metadata: nil, completion: {(metadata, error) in
+                if error != nil{
+                    print("error!!!", error)
+                    return
+                }
+                storageRef.downloadURL(completion: {(url, error) in
+                    if let imageURL = url?.absoluteString{
+                        print("imageURL:", imageURL)
+                        newData["ProductImageURL"] = imageURL
+                        
+                    }
+                })
+            })
+        }
+        
+        
+        
+        return newData
+            
     
-        
-    }
 }
+}
+
 
 extension CreateProductDataController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
        func setImagePicker(){
@@ -94,8 +119,3 @@ extension CreateProductDataController : UIImagePickerControllerDelegate, UINavig
     }
    }
 
-extension CreateProductDataController{
-    func uploadImage(_ image:UIImage, completion:@escaping (_ url: URL?) -> ()){
-        
-    }
-}
