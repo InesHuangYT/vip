@@ -62,6 +62,7 @@ class CreateProductDataController: UIViewController {
     
     private func productInfo() -> Dictionary<String, String>{
         
+        var strURL = ""
         var newData = ["ProductName": ProductName.text ?? "Null", "Price": Price.text ?? "Null", "Description": Description.text ?? "Null", "ProductEvaluation": ProductEvaluation.text ?? "Null", "SellerEvaluation": SellerEvaluation.text ?? "Null"]
         
         newData["Notice"] = Notice.text ?? "Null"
@@ -81,13 +82,13 @@ class CreateProductDataController: UIViewController {
                 }
                 storageRef.downloadURL(completion: {(url, error) in
                     if let imageURL = url?.absoluteString{
+                        strURL = imageURL
                         print("imageURL:", imageURL)
-                        newData["ProductImageURL"] == imageURL
-                        
                     }
                 })
             })
         }
+         newData["ProductImageURL"] = strURL
         
         
         
