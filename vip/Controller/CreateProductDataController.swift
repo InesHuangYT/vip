@@ -87,9 +87,15 @@ extension CreateProductDataController : UIImagePickerControllerDelegate, UINavig
     
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]){
         
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         productImage.image = image
         self.dismiss(animated: true, completion: nil)
         
     }
    }
+
+extension CreateProductDataController{
+    func uploadImage(_ image:UIImage, completion:@escaping (_ url: URL?) -> ()){
+        
+    }
+}
