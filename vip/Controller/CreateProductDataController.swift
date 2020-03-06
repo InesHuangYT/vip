@@ -82,7 +82,7 @@ class CreateProductDataController: UIViewController {
                 storageRef.downloadURL(completion: {(url, error) in
                     if let imageURL = url?.absoluteString{
                         print("imageURL:", imageURL)
-                        newData["ProductImageURL"] = imageURL
+                        newData["ProductImageURL"] == imageURL
                         
                     }
                 })
