@@ -62,7 +62,7 @@ class CreateProductDataController: UIViewController {
     
     private func productInfo() -> Dictionary<String, String>{
         
-        var strURL = ""
+        
         var newData = ["ProductName": ProductName.text ?? "Null", "Price": Price.text ?? "Null", "Description": Description.text ?? "Null", "ProductEvaluation": ProductEvaluation.text ?? "Null", "SellerEvaluation": SellerEvaluation.text ?? "Null"]
         
         newData["Notice"] = Notice.text ?? "Null"
@@ -71,37 +71,43 @@ class CreateProductDataController: UIViewController {
         newData["Method"] = Method.text ?? "Null"
         newData["OtherInfo"] = OtherInfo.text ?? "Null"
         
+        let imageStrURL = uploadImage()
         
-        let storageRef = Storage.storage().reference().child("ProductImage").child(ProductName.text!+".png")
-        
-        if let uploadData = self.productImage.image!.pngData(){
-            storageRef.putData(uploadData, metadata: nil, completion: {(metadata, error) in
-                if error != nil{
-                    print("error!!!", error)
-                    return
-                }
-                storageRef.downloadURL(completion: {(url, error) in
-                    if let imageURL = url?.absoluteString{
-                        strURL = imageURL
-                        print("strURL1: ",strURL)
-                        print("imageURL:", imageURL)
-                        
-                    }
-                })
-                print("strURL2: ",strURL)
-                newData["ProductImageURL"] = strURL
-            })
-            print("strURL3: ",strURL)
-        }
-        print("strURL4", strURL)
-        
-        
-        
-        
+        newData["ProductImageURL"] = imageStrURL
+       
         return newData
             
     
 }
+    private func uploadImage() -> String{
+        
+        var strURL = ""
+        let storageRef = Storage.storage().reference().child("ProductImage").child(ProductName.text!+".png")
+               
+               if let uploadData = self.productImage.image!.pngData(){
+                   storageRef.putData(uploadData, metadata: nil, completion: {(metadata, error) in
+                       if error != nil{
+                           print("error!!!", error)
+                           return
+                       }
+                       storageRef.downloadURL(completion: {(url, error) in
+                           if let imageURL = url?.absoluteString{
+                               strURL = imageURL
+                               print("strURL1: ",strURL)
+                               print("imageURL:", imageURL)
+                           }
+                       })
+                       print("strURL2: ",strURL)
+                   })
+                   print("strURL3: ",strURL)
+               }
+               print("strURL4", strURL)
+        
+        return strURL
+        
+    }
+    
+    
 }
 
 
