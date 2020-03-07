@@ -54,15 +54,29 @@ class CreateProductDataController: UIViewController {
     
     @IBAction func CreatBtn(_ sender: Any) {
         
-       let newData = productInfo()
-       print(newData)
-//       self.ref.child("Product").childByAutoId().setValue(newData)
-//       print("creat product data successfully")
+         var strURL = ""
+         let storageRef = Storage.storage().reference().child("ProductImage").child((ProductName.text)!+".png")
+                               
+            if let uploadData = self.productImage.image!.pngData(){
+                storageRef.putData(uploadData, metadata: nil, completion: {(metadata, error) in
+                   if error != nil{
+                      print("error!!!", error)
+                        return
+                                       }
+                    storageRef.downloadURL(completion: {(url, error) in
+                        if let imageURL = url?.absoluteString{
+                          strURL = imageURL
+                          print("strURL1: ",strURL)
+                          print("imageURL:", imageURL)
+                            self.productInfo(imageURL: strURL)
+                          
+                                           }
+                                       })
+                                   })
+                               }
     }
     
-    private func productInfo() -> Dictionary<String, String>{
-        
-        
+    private func productInfo(imageURL: String) -> Void{
         var newData = ["ProductName": ProductName.text ?? "Null", "Price": Price.text ?? "Null", "Description": Description.text ?? "Null", "ProductEvaluation": ProductEvaluation.text ?? "Null", "SellerEvaluation": SellerEvaluation.text ?? "Null"]
         
         newData["Notice"] = Notice.text ?? "Null"
@@ -70,44 +84,23 @@ class CreateProductDataController: UIViewController {
         newData["ExpDate"] = ExpDate.text ?? "Null"
         newData["Method"] = Method.text ?? "Null"
         newData["OtherInfo"] = OtherInfo.text ?? "Null"
+        newData["imageURL"] = imageURL
         
-        let imageStrURL = uploadImage()
+        print(newData)
         
-        newData["ProductImageURL"] = imageStrURL
-       
-        return newData
-            
-    
+        self.ref.child("Product").childByAutoId().setValue(newData)
+        print("creat product data successfully")
+        
 }
-    private func uploadImage() -> String{
-        
-        var strURL = ""
-        let storageRef = Storage.storage().reference().child("ProductImage").child(ProductName.text!+".png")
-               
-               if let uploadData = self.productImage.image!.pngData(){
-                   storageRef.putData(uploadData, metadata: nil, completion: {(metadata, error) in
-                       if error != nil{
-                           print("error!!!", error)
-                           return
-                       }
-                       storageRef.downloadURL(completion: {(url, error) in
-                           if let imageURL = url?.absoluteString{
-                               strURL = imageURL
-                               print("strURL1: ",strURL)
-                               print("imageURL:", imageURL)
-                           }
-                       })
-                       print("strURL2: ",strURL)
-                   })
-                   print("strURL3: ",strURL)
-               }
-               print("strURL4", strURL)
-        
-        return strURL
-        
-    }
-    
-    
+//        private func uploadImage() -> String{
+//
+//
+//
+//        return strURL
+//
+//    }
+//
+//
 }
 
 
