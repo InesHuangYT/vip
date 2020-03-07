@@ -166,15 +166,15 @@
             </objects>
             <point key="canvasLocation" x="1711" y="-868"/>
         </scene>
-        <!--CreateProductData-->
+        <!--ShoppingCart-->
         <scene sceneID="e4W-8c-3uQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="ShoppingCart" referencedIdentifier="CreateProductData" id="6QC-uL-bAh" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ShoppingCart" referencedIdentifier="ShoppingCart" id="6QC-uL-bAh" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ges-BN-XoA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yb6-00-p1n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2388" y="-869"/>
+            <point key="canvasLocation" x="2449" y="-894"/>
         </scene>
         <!--Coupon Controller-->
         <scene sceneID="r2H-O8-q5s">

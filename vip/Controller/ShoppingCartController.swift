@@ -12,8 +12,8 @@ import Firebase
 
 class ShoppingCartController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
     @IBOutlet weak var tableview: UITableView!
+    var ref: DatabaseReference!
 
     
     
@@ -23,7 +23,10 @@ class ShoppingCartController : UIViewController, UITableViewDelegate, UITableVie
     }
    
     func loadData(){
-        
+       ref = Database.database().reference()
+        ref.child("ShoppingCart").observe(.childAdded, with: {(DataSnapshot) in
+            print("LoadData: ", DataSnapshot)
+        }, withCancel: nil)
     }
     
     func numberOfSectionInTableView(tableView: UITableView) -> Int{
@@ -40,14 +43,14 @@ class ShoppingCartController : UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    @IBAction func ListBtnTapped(_ sender: Any) {
-    }
-    
-    @IBAction func OrderBtn(_ sender: Any) {
-    }
-    
-    @IBAction func DeleteBtn(_ sender: Any) {
-    }
-    
+//    @IBAction func ListBtnTapped(_ sender: Any) {
+//    }
+//
+//    @IBAction func OrderBtn(_ sender: Any) {
+//    }
+//
+//    @IBAction func DeleteBtn(_ sender: Any) {
+//    }
+//
     
 }

@@ -89,7 +89,10 @@ class CreateProductDataController: UIViewController {
         print(newData)
         
         self.ref.child("Product").childByAutoId().setValue(newData)
+//        購物車資料暫時使用ProductInfo的資料，Id要照被選取的商品資料id新增
+        self.ref.child("ShoppingCart").childByAutoId().setValue(newData)
         print("creat product data successfully")
+        
         
 }
 //        private func uploadImage() -> String{
