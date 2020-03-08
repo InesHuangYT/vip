@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="6QC-uL-bAh" kind="relationship" relationship="rootViewController" id="A90-hG-CJx"/>
+                        <segue destination="6QC-uL-bAh" kind="relationship" relationship="rootViewController" id="Kwc-YQ-JzS"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wqt-5F-oOo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,6 +175,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yb6-00-p1n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2388" y="-869"/>
+        </scene>
+        <!--SignUpLogIn-->
+        <scene sceneID="Y2a-kT-WrS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUpLogIn" id="iUN-UH-uCb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZNC-6A-C91"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q9h-CT-3F6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2388" y="-771"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="aXr-KV-jcP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="z8j-cS-hY7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Gyk-1L-9nX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ccq-Pi-MzP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2401" y="-685"/>
         </scene>
         <!--Coupon Controller-->
         <scene sceneID="r2H-O8-q5s">
