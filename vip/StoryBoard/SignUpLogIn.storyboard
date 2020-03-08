@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JaW-6X-PTu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lEn-xI-6iT">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="lYm-kY-cyC">
-            <objects>
-                <navigationController id="JaW-6X-PTu" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="Iag-3U-hgL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="lEn-xI-6iT" kind="relationship" relationship="rootViewController" id="5Ad-E3-kId"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tyz-qP-LGL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-826" y="126"/>
-        </scene>
         <!--LogInController-->
         <scene sceneID="Cxv-15-lvZ">
             <objects>
@@ -33,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellow square" translatesAutoresizingMaskIntoConstraints="NO" id="YnY-M6-zij">
-                                <rect key="frame" x="30" y="268" width="315" height="241"/>
+                                <rect key="frame" x="30" y="224" width="315" height="241"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="s1h-7y-Oea">
-                                <rect key="frame" x="67" y="336" width="240" height="90"/>
+                                <rect key="frame" x="67" y="292" width="240" height="90"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入帳號" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MjM-mh-l3u">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
@@ -75,10 +59,10 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Myb-RS-aKR">
-                                <rect key="frame" x="100" y="94" width="175" height="166"/>
+                                <rect key="frame" x="100" y="50" width="175" height="166"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrX-yR-WYk">
-                                <rect key="frame" x="149" y="517" width="77" height="30"/>
+                                <rect key="frame" x="149" y="473" width="77" height="30"/>
                                 <state key="normal" title="忘記密碼？">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -96,7 +80,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er5-KK-SLx">
-                                <rect key="frame" x="65" y="555" width="245" height="39"/>
+                                <rect key="frame" x="65" y="511" width="245" height="39"/>
                                 <state key="normal" title="註冊" backgroundImage="sign up">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -106,7 +90,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82t-Ye-bvz">
-                                <rect key="frame" x="114" y="445" width="147" height="39"/>
+                                <rect key="frame" x="114" y="401" width="147" height="39"/>
                                 <state key="normal" title="登入" backgroundImage="confirm">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -115,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0L-Zs-fhn">
-                                <rect key="frame" x="163" y="284" width="49" height="44"/>
+                                <rect key="frame" x="163" y="240" width="49" height="44"/>
                                 <state key="normal" title="連結Google帳號" backgroundImage="google">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -175,14 +159,14 @@
             <objects>
                 <viewController storyboardIdentifier="SignUpControllerId" id="4Fp-Zb-toK" customClass="SignUpController" customModule="vip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eZH-QK-lOH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="d5y-Gs-Ck9">
-                                <rect key="frame" x="40" y="84" width="295" height="166"/>
+                                <rect key="frame" x="40" y="40" width="295" height="166"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="U5y-yB-5gX">
-                                <rect key="frame" x="40" y="555.5" width="295" height="71.5"/>
+                                <rect key="frame" x="40" y="535.5" width="295" height="71.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMn-cZ-sdz">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="39"/>
@@ -205,7 +189,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Wx-xh-OKu">
-                                <rect key="frame" x="40" y="258" width="295" height="210"/>
+                                <rect key="frame" x="40" y="214" width="295" height="210"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入帳號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ViB-lb-9G4">
                                         <rect key="frame" x="27.5" y="0.0" width="240" height="40"/>
