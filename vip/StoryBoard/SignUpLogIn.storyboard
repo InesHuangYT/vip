@@ -338,7 +338,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="deliverWaysWasPressed:" destination="Pie-1R-3uH" eventType="touchUpInside" id="uxa-P5-q0u"/>
+                                    <action selector="deliverWaysWasPressed:" destination="Pie-1R-3uH" eventType="touchUpInside" id="ROB-9f-bdq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdW-Kq-6ZN">
@@ -361,7 +361,8 @@
                     </view>
                     <connections>
                         <outlet property="currentUserlabel" destination="NwN-aL-DJk" id="kpj-jC-JXe"/>
-                        <outlet property="selectShow" destination="xY6-cl-361" id="byC-C6-NY8"/>
+                        <outlet property="selectDeliverWayButton" destination="xY6-cl-361" id="lox-vy-kKU"/>
+                        <outlet property="selectPaymentWayButton" destination="UdW-Kq-6ZN" id="ECy-Mo-Cn0"/>
                         <outlet property="signOutButton" destination="GDv-BR-tK9" id="Y9i-Ak-BbU"/>
                     </connections>
                 </viewController>

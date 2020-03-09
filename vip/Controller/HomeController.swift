@@ -15,12 +15,14 @@ class CellClass : UITableViewCell{
     
 }
 class HomeController: UIViewController {
-    @IBOutlet weak var selectShow: UIButton!
+    @IBOutlet weak var selectDeliverWayButton: UIButton!
+    @IBOutlet weak var selectPaymentWayButton: UIButton!
     
     @IBOutlet weak var currentUserlabel: UILabel!
     @IBOutlet weak var signOutButton: UIButton!
     
-    let deliverWays = ["home","seven","family"]
+    let deliverWays = ["宅配","711","全家便利商店"]
+    let paymentWays = ["貨到付款","信用卡/VISA","線上支付","銀行轉帳"]
     let transparentView = UIView()
     let tableViews = UITableView()
 //    var selectedButton = UIButton()
@@ -72,7 +74,7 @@ class HomeController: UIViewController {
     }
     
     @objc func removeTransparent(){
-        let frames = selectShow.frame
+        let frames = selectDeliverWayButton.frame
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0,
                        options: .curveEaseInOut, animations: { 
                         self.transparentView.alpha = 0
@@ -83,7 +85,7 @@ class HomeController: UIViewController {
        
     
     @IBAction func deliverWaysWasPressed(_ sender: Any) {
-        addTransparent(frames: selectShow.frame)
+        addTransparent(frames: selectDeliverWayButton.frame)
     }
     
 }
@@ -105,10 +107,9 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        selectShow.setTitle(cell?.textLabel?.text, for: .normal)
-        selectShow.setTitle(deliverWays[indexPath.row], for: .normal)
-        let cell = tableViews.cellForRow(at: indexPath) 
-        // 得知點選哪一個cell
+        selectDeliverWayButton.setTitle(deliverWays[indexPath.row], for: .normal)
+        // selectDeliverWayButton.setTitle(cell?.textLabel?.text, for: .normal) --other way
+        let cell = tableViews.cellForRow(at: indexPath) // 得知點選哪一個cell
         print("cell:",cell?.textLabel?.text! ?? 0)
         Database.database().reference(withPath: "users/\(self.uid)/Profile/deliverWays").setValue(cell?.textLabel?.text!)
         removeTransparent()
