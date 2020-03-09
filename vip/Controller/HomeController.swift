@@ -21,8 +21,9 @@ class HomeController: UIViewController {
     @IBOutlet weak var currentUserlabel: UILabel!
     @IBOutlet weak var signOutButton: UIButton!
     
-    let deliverWays = ["宅配","711","全家便利商店"]
-    let paymentWays = ["貨到付款","信用卡/VISA","線上支付","銀行轉帳"]
+    var waySources = [String]()
+//    let deliverWays = ["宅配","711","全家便利商店"]
+//    let paymentWays = ["貨到付款","信用卡/VISA","線上支付","銀行轉帳"]
     let transparentView = UIView()
     let tableViews = UITableView()
 //    var selectedButton = UIButton()
@@ -61,14 +62,14 @@ class HomeController: UIViewController {
         tableViews.frame = CGRect(x: frames.origin.x, y: frames.origin.y, width: frames.width, height: 0)
         
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
-        
+        tableViews.reloadData()
         let tapGesture = UITapGestureRecognizer(target: self
             , action: #selector(removeTransparent))
         transparentView.addGestureRecognizer(tapGesture)
         transparentView.alpha = 0
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: { 
             self.transparentView.alpha = 0.5
-            self.tableViews.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height + 5, width: frames.width, height: CGFloat(self.deliverWays.count * 50) )
+            self.tableViews.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height + 5, width: frames.width, height: CGFloat(self.waySources.count * 50) )
         }, completion: nil)
         
     }
@@ -85,21 +86,26 @@ class HomeController: UIViewController {
        
     
     @IBAction func deliverWaysWasPressed(_ sender: Any) {
+        waySources = ["宅配","711","全家便利商店"]
         addTransparent(frames: selectDeliverWayButton.frame)
     }
     
+    @IBAction func paymentWaysWasPressed(_ sender: Any) {
+        waySources = ["貨到付款","信用卡/VISA","線上支付","銀行轉帳"]
+        addTransparent(frames: selectPaymentWayButton.frame)
+    }
 }
 
 
 
 extension HomeController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return deliverWays.count
+            return waySources.count
         }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViews.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = deliverWays[indexPath.row]
+        cell.textLabel?.text = waySources[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -107,7 +113,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectDeliverWayButton.setTitle(deliverWays[indexPath.row], for: .normal)
+        selectDeliverWayButton.setTitle(waySources[indexPath.row], for: .normal)
         // selectDeliverWayButton.setTitle(cell?.textLabel?.text, for: .normal) --other way
         let cell = tableViews.cellForRow(at: indexPath) // 得知點選哪一個cell
         print("cell:",cell?.textLabel?.text! ?? 0)
