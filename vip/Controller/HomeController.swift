@@ -9,6 +9,7 @@
 import UIKit
 import GoogleSignIn
 import FirebaseAuth
+import Firebase
 
 class CellClass : UITableViewCell{
     
@@ -104,9 +105,12 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableViews.cellForRow(at: indexPath)
-        selectShow.setTitle(cell?.textLabel?.text, for: .normal)
-        self.tableViews.isHidden = false
+//        selectShow.setTitle(cell?.textLabel?.text, for: .normal)
+        selectShow.setTitle(deliverWays[indexPath.row], for: .normal)
+        let cell = tableViews.cellForRow(at: indexPath) 
+        // 得知點選哪一個cell
+        print("cell:",cell?.textLabel?.text! ?? 0)
+        Database.database().reference(withPath: "users/\(self.uid)/Profile/deliverWays").setValue(cell?.textLabel?.text!)
         removeTransparent()
     }
 }
