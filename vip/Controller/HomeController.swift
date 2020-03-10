@@ -22,8 +22,8 @@ class HomeController: UIViewController {
     @IBOutlet weak var signOutButton: UIButton!
     
     var waySources = [String]()
-//    let deliverWays = ["宅配","711","全家便利商店"]
-//    let paymentWays = ["貨到付款","信用卡/VISA","線上支付","銀行轉帳"]
+    var selectText = String()
+    var selectButton = UIButton()
     let transparentView = UIView()
     let tableViews = UITableView()
 //    var selectedButton = UIButton()
@@ -87,11 +87,15 @@ class HomeController: UIViewController {
     
     @IBAction func deliverWaysWasPressed(_ sender: Any) {
         waySources = ["宅配","711","全家便利商店"]
+        selectButton = selectDeliverWayButton
+        selectText = "deliverWays"
         addTransparent(frames: selectDeliverWayButton.frame)
     }
     
     @IBAction func paymentWaysWasPressed(_ sender: Any) {
         waySources = ["貨到付款","信用卡/VISA","線上支付","銀行轉帳"]
+        selectButton = selectPaymentWayButton
+        selectText = "paymentWays"
         addTransparent(frames: selectPaymentWayButton.frame)
     }
 }
@@ -113,11 +117,12 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectDeliverWayButton.setTitle(waySources[indexPath.row], for: .normal)
+        selectButton.setTitle(waySources[indexPath.row], for: .normal)
         // selectDeliverWayButton.setTitle(cell?.textLabel?.text, for: .normal) --other way
         let cell = tableViews.cellForRow(at: indexPath) // 得知點選哪一個cell
         print("cell:",cell?.textLabel?.text! ?? 0)
-        Database.database().reference(withPath: "users/\(self.uid)/Profile/deliverWays").setValue(cell?.textLabel?.text!)
+        
+        Database.database().reference(withPath: "users/\(self.uid)/Profile/\(selectText)").setValue(cell?.textLabel?.text!)
         removeTransparent()
     }
 }
