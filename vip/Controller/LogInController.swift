@@ -25,6 +25,7 @@ class LogInController: UIViewController,GIDSignInDelegate {
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var forgetPasswordButtin: UIButton!
     @IBOutlet weak var googleConnectionButton: GIDSignInButton!
+   
 //    var
     var uid = ""
     var account = ""
@@ -74,17 +75,15 @@ class LogInController: UIViewController,GIDSignInDelegate {
             }
         }
     }
+    
 //    connect google button 
     @IBAction func googleConnectionButtonWasPressed(_ sender: Any) {
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance()?.signIn()
-        // Automatically sign in the user.
-//        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-        
-       
-       
+         GIDSignIn.sharedInstance()?.presentingViewController = self
+                GIDSignIn.sharedInstance()?.signIn()
+                // Automatically sign in the user.
+        //        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+                
     }
-    
     
     @IBAction func forgetPasswordWasPressed(_ sender: Any) {
             
@@ -125,7 +124,7 @@ class LogInController: UIViewController,GIDSignInDelegate {
                         let newUserName = currentUser.username
                         Database.database().reference(withPath: "users/\(newUid)/Profile/account").setValue(newAcoount)
                         Database.database().reference(withPath: "users/\(newUid)/Profile/name").setValue(newUserName)
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let storyboard = UIStoryboard(name: "SignUpLogIn", bundle: nil)
                         let vc = storyboard.instantiateViewController(withIdentifier: "HomeControllerId") as! HomeController
                         self.navigationController?.pushViewController(vc,animated: true)
 //                        self.present(vc, animated: true, completion: nil)
