@@ -14,12 +14,16 @@ import Firebase
 class CellClass : UITableViewCell{
     
 }
-class HomeController: UIViewController {
+class HomeController: UIViewController,UITextFieldDelegate {
+    
     @IBOutlet weak var selectDeliverWayButton: UIButton!
     @IBOutlet weak var selectPaymentWayButton: UIButton!
+    @IBOutlet weak var signUpConfirm: UIButton!
+    @IBOutlet weak var signOutButton: UIButton!
     
     @IBOutlet weak var currentUserlabel: UILabel!
-    @IBOutlet weak var signOutButton: UIButton!
+
+    @IBOutlet weak var phoneTextField: UITextField!
     
     var waySources = [String]()
     var selectText = String()
@@ -31,11 +35,24 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableViews.delegate = self
         tableViews.dataSource = self
         tableViews.register(CellClass.self, forCellReuseIdentifier: "Cell")
+        
+        // To hideKeyboard
+        phoneTextField.delegate = self
+        
         print("current user uidd : " , currentUserName())
      }
+    
+    // To hideKeyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          textField.resignFirstResponder()
+          return true
+    }
+
+    
     
     @IBAction func signOutButtonWasPressed(_ sender: Any) {
         GIDSignIn.sharedInstance().signOut()
@@ -98,6 +115,39 @@ class HomeController: UIViewController {
         selectText = "paymentWays"
         addTransparent(frames: selectPaymentWayButton.frame)
     }
+    
+
+
+    
+    @IBAction func signUpConfirmWasPressed(_ sender: Any) {
+        var error = ""
+        if phoneTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            error = "請輸入手機號碼"
+            print(error)
+        }else{
+            let phone = phoneTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            Database.database().reference(withPath:"users/\(self.uid)/Profile/phone").setValue(phone)
+        }
+        let message = UIAlertController(title: "註冊成功", message: nil, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "返回登入頁面", style: .default, handler:
+        {action in 
+            print("here need to return to login page!")
+            self.transitionToOtherScene()
+        })
+        message.addAction(confirmAction)
+        self.present(message, animated: true, completion: nil)
+    }
+    
+    //  go to logIn step
+        func transitionToOtherScene(){
+            let storyboard = UIStoryboard(name: "SignUpLogIn", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "LogInControllerId") as! LogInController
+            self.navigationController?.pushViewController(vc,animated: true)
+        }
+        
+    
+
+    
 }
 
 
@@ -126,4 +176,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource{
         removeTransparent()
     }
 }
+
+
+
 
