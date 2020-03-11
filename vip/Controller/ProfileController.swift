@@ -27,26 +27,41 @@ class ProfileController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Database
-        .database()
-        .reference()
-        .child("users")
-        .child(Auth.auth().currentUser!.uid)
-        .child("Profile")
-        .queryOrderedByKey()
-        .observeSingleEvent(of: .value, with: { snapshot in
-            guard let value = snapshot.value as? [String:Any] else {
-                print("Error")
-                return
-            }
-            let account = value["account"] as? String
-            print("account : ",account!)
-            let name = value["name"] as? String
-            print("name : ",name!)
-        })
-        
-    
+        Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
+            .child("Profile")
+            .queryOrderedByKey()
+            .observeSingleEvent(of: .value, with: { snapshot in 
+                guard let value = snapshot.value as? [String:Any]
+                    else {
+                        print("Error")
+                        return
+                }
+                self.setLabel(value: value)
+            })
     }
+    
+    func setLabel(value:[String:Any]){
 
-   
+        let account = value["account"] as? String
+        let name = value["name"] as? String
+        let deliverWays = value["deliverWays"] as? String
+        let paymentWays = value["paymentWays"] as? String
+        if (value["phone"] as? String) == nil{
+            print("phone is null ")
+            phoneLabel.text = "請設定手機號碼"
+            phoneLabel.textColor = UIColor(red: 255/255, green: 136/255, blue: 128/255, alpha: 1)
+            
+               }else{
+                   let phone = value["phone"] as? String
+                   phoneLabel.text = "手機號碼   " + (phone!)
+               }
+        
+        accountLabel.text = "帳號   " + (account!)
+        nameLabel.text = "姓名   " + (name!)
+        emailLabel.text = "信箱   " + (account!)
+        deliverWaysLabel.text = "寄送方式   " + (deliverWays!)
+        pamentWaysLabel.text = "付款方式   " + (paymentWays!)
+    }
+        
+        
 }
