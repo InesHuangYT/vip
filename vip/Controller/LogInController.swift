@@ -67,12 +67,12 @@ class LogInController: UIViewController,GIDSignInDelegate {
                 self.errorLabel.text = error!.localizedDescription
                 self.errorLabel.textColor = UIColor.red
             }else{
-
-                if let controller = self.storyboard?.instantiateViewController(withIdentifier: "HomeControllerId") as? HomeController{
-                    self.navigationController?.pushViewController(controller, animated: true)
-                }
-               
+                
+                let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "ProfileControllerId") as! ProfileController
+                self.navigationController?.pushViewController(vc,animated: true)  
             }
+            
         }
     }
     

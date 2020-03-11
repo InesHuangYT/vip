@@ -11,13 +11,13 @@
         <!--Profile Controller-->
         <scene sceneID="iiR-Q9-AnG">
             <objects>
-                <viewController id="WIY-0l-MDq" userLabel="Profile Controller" customClass="ProfileController" customModule="vip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileControllerId" id="WIY-0l-MDq" userLabel="Profile Controller" customClass="ProfileController" customModule="vip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ubz-JR-n6h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideBar" translatesAutoresizingMaskIntoConstraints="NO" id="F5B-Vh-VUD">
-                                <rect key="frame" x="-6" y="0.0" width="50" height="667"/>
+                                <rect key="frame" x="-7" y="0.0" width="50" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="GO9-OQ-Vdw">
                                 <rect key="frame" x="6.5" y="625" width="29" height="29"/>
@@ -60,7 +60,7 @@
                                         <color key="textColor" red="0.53829288480000004" green="0.53505933279999995" blue="0.50309789179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="He2-RW-uBE">
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" verticalCompressionResistancePriority="752" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="He2-RW-uBE">
                                         <rect key="frame" x="0.0" y="35.5" width="280" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="pEg-JZ-743"/>
@@ -122,12 +122,12 @@
                         <constraints>
                             <constraint firstItem="G9B-HP-pg1" firstAttribute="top" secondItem="kb5-uI-HXZ" secondAttribute="bottom" constant="17" id="5l1-7V-log"/>
                             <constraint firstItem="ZIX-k7-9R3" firstAttribute="centerX" secondItem="Ubz-JR-n6h" secondAttribute="centerX" id="D8N-Ce-al2"/>
-                            <constraint firstItem="kb5-uI-HXZ" firstAttribute="leading" secondItem="F5B-Vh-VUD" secondAttribute="trailing" constant="55" id="GxD-jP-geB"/>
+                            <constraint firstItem="kb5-uI-HXZ" firstAttribute="leading" secondItem="F5B-Vh-VUD" secondAttribute="trailing" constant="56" id="GxD-jP-geB"/>
                             <constraint firstItem="F5B-Vh-VUD" firstAttribute="bottom" secondItem="yS6-hI-Ici" secondAttribute="bottom" id="HC4-eg-Ac0"/>
                             <constraint firstItem="G9B-HP-pg1" firstAttribute="leading" secondItem="Ubz-JR-n6h" secondAttribute="leadingMargin" constant="24" id="Hkx-9x-LRN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G9B-HP-pg1" secondAttribute="trailing" constant="-16" id="MJz-cu-0YF"/>
                             <constraint firstItem="F5B-Vh-VUD" firstAttribute="top" secondItem="yS6-hI-Ici" secondAttribute="top" id="Pil-Ya-8bv"/>
-                            <constraint firstItem="F5B-Vh-VUD" firstAttribute="leading" secondItem="Ubz-JR-n6h" secondAttribute="leading" constant="-6" id="TBA-5t-Tim"/>
+                            <constraint firstItem="F5B-Vh-VUD" firstAttribute="leading" secondItem="Ubz-JR-n6h" secondAttribute="leading" constant="-7" id="TBA-5t-Tim"/>
                             <constraint firstItem="kb5-uI-HXZ" firstAttribute="top" secondItem="yS6-hI-Ici" secondAttribute="top" constant="13" id="XSB-Qa-Qbn"/>
                             <constraint firstItem="kb5-uI-HXZ" firstAttribute="top" secondItem="OZp-PT-kwx" secondAttribute="top" id="crh-LX-C9L"/>
                             <constraint firstItem="yS6-hI-Ici" firstAttribute="bottom" secondItem="GO9-OQ-Vdw" secondAttribute="bottom" constant="13" id="dzm-v9-l9V"/>

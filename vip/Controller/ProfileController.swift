@@ -53,14 +53,14 @@ class ProfileController: UIViewController {
             
                }else{
                    let phone = value["phone"] as? String
-                   phoneLabel.text = "手機號碼   " + (phone!)
+                   phoneLabel.text = "手機號碼    " + (phone!)
                }
         
-        accountLabel.text = "帳號   " + (account!)
-        nameLabel.text = "姓名   " + (name!)
-        emailLabel.text = "信箱   " + (account!)
-        deliverWaysLabel.text = "寄送方式   " + (deliverWays!)
-        pamentWaysLabel.text = "付款方式   " + (paymentWays!)
+        accountLabel.text = "    帳號        " + (account!)
+        nameLabel.text = "    姓名        " + (name!)
+        emailLabel.text = "    信箱        " + (account!)
+        deliverWaysLabel.text = "寄送方式    " + (deliverWays!)
+        pamentWaysLabel.text = "付款方式    " + (paymentWays!)
     }
         
         

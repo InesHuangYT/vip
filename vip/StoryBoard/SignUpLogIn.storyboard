@@ -95,7 +95,7 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="logInButtonWasPressed:" destination="lEn-xI-6iT" eventType="touchUpInside" id="0If-7i-w9c"/>
+                                    <action selector="logInButtonWasPressed:" destination="lEn-xI-6iT" eventType="touchUpInside" id="4NN-a2-gmQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0L-Zs-fhn">
@@ -145,7 +145,7 @@
                         <outlet property="errorLabel" destination="Q0a-Ao-S90" id="gGV-g2-Fmi"/>
                         <outlet property="forgetPasswordButtin" destination="xrX-yR-WYk" id="m4O-QB-gUK"/>
                         <outlet property="googleConnectionButton" destination="d0L-Zs-fhn" id="eaW-yS-rjt"/>
-                        <outlet property="logInButton" destination="82t-Ye-bvz" id="ndH-92-Ysk"/>
+                        <outlet property="logInButton" destination="82t-Ye-bvz" id="0MQ-jP-Ybm"/>
                         <outlet property="passwordTextField" destination="sX6-ar-7a4" id="wZy-hV-aWk"/>
                         <outlet property="signUpButton" destination="Er5-KK-SLx" id="7cE-Lw-mb0"/>
                     </connections>
@@ -170,7 +170,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMn-cZ-sdz">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="39"/>
-                                        <state key="normal" title="確認註冊" backgroundImage="signUpConfirm">
+                                        <state key="normal" title="下一步" backgroundImage="next">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -189,7 +189,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Wx-xh-OKu">
-                                <rect key="frame" x="40" y="214" width="295" height="210"/>
+                                <rect key="frame" x="40" y="214" width="295" height="170"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入帳號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ViB-lb-9G4">
                                         <rect key="frame" x="27.5" y="0.0" width="240" height="40"/>
@@ -259,17 +259,8 @@
                                             <constraint firstAttribute="height" constant="2" id="mol-yI-n2P"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入手機號碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-33-bn4">
-                                        <rect key="frame" x="27.5" y="168" width="240" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Apz-oC-NP5"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="c0F-v6-Yka"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOY-4O-Vaw">
-                                        <rect key="frame" x="27.5" y="208" width="240" height="2"/>
+                                        <rect key="frame" x="27.5" y="168" width="240" height="2"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="SRj-KR-9fh"/>
@@ -301,7 +292,6 @@
                         <outlet property="nameTextField" destination="mLQ-Iv-jNa" id="Zgv-WJ-BP3"/>
                         <outlet property="passwordConfirmTextField" destination="WWu-hH-OqR" id="2UA-Eg-s3w"/>
                         <outlet property="passwordTextField" destination="M5V-Ac-PeW" id="llv-HH-aKq"/>
-                        <outlet property="phoneTextField" destination="fc4-33-bn4" id="2Yi-wD-01Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8c6-KI-jwk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -332,7 +322,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY6-cl-361">
-                                <rect key="frame" x="44" y="61" width="286" height="59"/>
+                                <rect key="frame" x="44" y="164" width="286" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="選擇寄送方式">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -342,7 +332,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdW-Kq-6ZN">
-                                <rect key="frame" x="44" y="128" width="286" height="65"/>
+                                <rect key="frame" x="44" y="249" width="286" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="選擇付款方式">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -351,16 +341,31 @@
                                     <action selector="paymentWaysWasPressed:" destination="Pie-1R-3uH" eventType="touchUpInside" id="CQG-cb-YMd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onr-jj-2bw">
-                                <rect key="frame" x="125" y="481" width="125" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onr-jj-2bw">
+                                <rect key="frame" x="30" y="478" width="317" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="connect to  profile">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="確認註冊" backgroundImage="signUpConfirm">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RAQ-Xd-Uj0" kind="show" id="OQs-nc-Kzo"/>
+                                    <action selector="signUpConfirmWasPressed:" destination="Pie-1R-3uH" eventType="touchUpInside" id="aUK-Cf-FNK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="快完成了" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHC-iQ-SGw">
+                                <rect key="frame" x="132" y="82" width="110" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入手機號碼" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5XF-KV-aPg">
+                                <rect key="frame" x="99" y="352" width="178" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.93459850550000001" green="0.95914202930000003" blue="0.90638643500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -374,9 +379,11 @@
                     </view>
                     <connections>
                         <outlet property="currentUserlabel" destination="NwN-aL-DJk" id="kpj-jC-JXe"/>
+                        <outlet property="phoneTextField" destination="5XF-KV-aPg" id="txS-Dw-utj"/>
                         <outlet property="selectDeliverWayButton" destination="xY6-cl-361" id="lox-vy-kKU"/>
                         <outlet property="selectPaymentWayButton" destination="UdW-Kq-6ZN" id="ECy-Mo-Cn0"/>
                         <outlet property="signOutButton" destination="GDv-BR-tK9" id="Y9i-Ak-BbU"/>
+                        <outlet property="signUpConfirm" destination="onr-jj-2bw" id="ozp-39-utM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvK-fI-o4R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -398,6 +405,7 @@
         <image name="confirm" width="147" height="39"/>
         <image name="google" width="41" height="40"/>
         <image name="logo" width="175" height="166"/>
+        <image name="next" width="317" height="39"/>
         <image name="sign up" width="245" height="39"/>
         <image name="signUpConfirm" width="317" height="39"/>
         <image name="yellow square" width="315" height="241"/>

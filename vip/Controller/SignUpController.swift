@@ -15,7 +15,6 @@ class SignUpController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -34,7 +33,6 @@ class SignUpController: UIViewController {
         passwordTextField.delegate = self
         passwordConfirmTextField.delegate = self
         nameTextField.delegate = self
-        phoneTextField.delegate = self
          
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
@@ -45,7 +43,6 @@ class SignUpController: UIViewController {
         passwordTextField.resignFirstResponder()
         passwordConfirmTextField.resignFirstResponder()
         nameTextField.resignFirstResponder()
-        phoneTextField.resignFirstResponder()
       }
 
     @IBAction func signUpConfirmTap(_ sender: Any) {
@@ -60,7 +57,7 @@ class SignUpController: UIViewController {
             let account = accountTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let name = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let phone = phoneTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+           
             
 //        create the user 
             Auth.auth().createUser(withEmail: account, password: password) {(result,err) in 
@@ -78,28 +75,14 @@ class SignUpController: UIViewController {
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/account").setValue(account)
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/password").setValue(password)
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/name").setValue(name)
-                    Database.database().reference(withPath: "users/\(self.uid)/Profile/phone").setValue(phone)
-                    
-                    let message = UIAlertController(title: "註冊成功", message: nil, preferredStyle: .alert)
-                    let confirmAction = UIAlertAction(title: "返回登入頁面", style: .default, handler: {
-                        action in 
-                        print("here need to return to login page!")
-                        if #available(iOS 13.0, *) {
-                            self.transitionToHome()      //transisiton to home screens
-                        } else {
-                            // Fallback on earlier versions
-                        }
-                    })
-                    message.addAction(confirmAction)
-                    self.present(message, animated: true, completion: nil)
+                   
+                    if #available(iOS 13.0, *) {
+                        self.transitionToOtherScene()
+                    } else {
+                        // Fallback on earlier versions
+                    } 
+                   
 
-                        //                    let db = Firestore.firestore()
-                        //                    db.collection("users").addDocument(data: ["account": account,"password":password ,"name" : name, "phone": phone, "uid":result!.user.uid ]) { (error) in
-                        //                        
-                        //                        if error != nil{
-                        //                            self.showError("saving User data error")
-                        //                        }
-                        //                    }
                       
                 }
                 
@@ -113,7 +96,7 @@ class SignUpController: UIViewController {
     func validateField() -> String? {
         
         //check that all fields are filled in  
-        if accountTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordConfirmTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || phoneTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        if accountTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordConfirmTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
             return "請輸入全部空格！"
         }
@@ -145,10 +128,12 @@ class SignUpController: UIViewController {
 //        errorLabel.alpha = 1
     }
     
-//  signUp successfully
+//  go to next step
     @available(iOS 13.0, *)
-    func transitionToHome(){
-        navigationController?.popViewController(animated: true)
+    func transitionToOtherScene(){
+        let storyboard = UIStoryboard(name: "SignUpLogIn", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeControllerId") as! HomeController
+        self.navigationController?.pushViewController(vc,animated: true)
     }
     
 }
