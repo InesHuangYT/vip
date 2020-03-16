@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B042F7F3241F8C72005982AF /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B042F7F2241F8C72005982AF /* Product.storyboard */; };
+		B042F7F5241F8CB2005982AF /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042F7F4241F8CB2005982AF /* ProductController.swift */; };
+		B042F7F7241F9064005982AF /* ProductInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B042F7F6241F9064005982AF /* ProductInformationController.swift */; };
 		B087D22C23F56436001FAC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087D22B23F56436001FAC9A /* AppDelegate.swift */; };
 		B087D22E23F56436001FAC9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087D22D23F56436001FAC9A /* SceneDelegate.swift */; };
 		B087D23023F56436001FAC9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087D22F23F56436001FAC9A /* ViewController.swift */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		45BE09659B28CB1602AFED1A /* Pods-vip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vip.debug.xcconfig"; path = "Target Support Files/Pods-vip/Pods-vip.debug.xcconfig"; sourceTree = "<group>"; };
 		48C404FB32D82B820BA2907F /* Pods_vip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B042F7F2241F8C72005982AF /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
+		B042F7F4241F8CB2005982AF /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
+		B042F7F6241F9064005982AF /* ProductInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationController.swift; sourceTree = "<group>"; };
 		B087D22823F56436001FAC9A /* vip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B087D22B23F56436001FAC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B087D22D23F56436001FAC9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +140,8 @@
 				C0164266240E0C2A00B760B2 /* ShoppingCartController.swift */,
 				C01A7AF0240FBF1B00E99EED /* CreateProductDataController.swift */,
 				B09ED5E42414EE0500D3C4A6 /* ProfileController.swift */,
+				B042F7F4241F8CB2005982AF /* ProductController.swift */,
+				B042F7F6241F9064005982AF /* ProductInformationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 				C0A511D7240FCFF100BABB14 /* ShoppingCart.storyboard */,
 				B0E618ED240FD58400EB6E74 /* SignUpLogIn.storyboard */,
 				B09ED5E22414E9B300D3C4A6 /* Profile.storyboard */,
+				B042F7F2241F8C72005982AF /* Product.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -230,6 +239,7 @@
 			files = (
 				B087D23823F56439001FAC9A /* LaunchScreen.storyboard in Resources */,
 				B0E618EE240FD58400EB6E74 /* SignUpLogIn.storyboard in Resources */,
+				B042F7F3241F8C72005982AF /* Product.storyboard in Resources */,
 				B0C77BB723F97A9100B8E5B7 /* GoogleService-Info.plist in Resources */,
 				C02BD2E524101F2900BD3E1D /* Main.storyboard in Resources */,
 				B087D23523F56439001FAC9A /* Assets.xcassets in Resources */,
@@ -304,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B042F7F7241F9064005982AF /* ProductInformationController.swift in Sources */,
 				B087D23023F56436001FAC9A /* ViewController.swift in Sources */,
 				B087D22C23F56436001FAC9A /* AppDelegate.swift in Sources */,
 				B0E618E623FD3C8000EB6E74 /* HomeController.swift in Sources */,
@@ -311,6 +322,7 @@
 				B0E618EA2400042800EB6E74 /* Protocol.swift in Sources */,
 				B087D22E23F56436001FAC9A /* SceneDelegate.swift in Sources */,
 				C0164267240E0C2A00B760B2 /* ShoppingCartController.swift in Sources */,
+				B042F7F5241F8CB2005982AF /* ProductController.swift in Sources */,
 				B09ED5E52414EE0500D3C4A6 /* ProfileController.swift in Sources */,
 				C01A7AF1240FBF1B00E99EED /* CreateProductDataController.swift in Sources */,
 				B0E0A31823F9D18F00BE8ECC /* LogInController.swift in Sources */,
