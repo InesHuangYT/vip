@@ -117,6 +117,16 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpw-JE-lPO">
+                                <rect key="frame" x="67" y="600" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="登出">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutButtonWasPressed:" destination="WIY-0l-MDq" eventType="touchUpInside" id="cX7-vP-PV3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93459850550000001" green="0.95914202930000003" blue="0.90638643500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -146,6 +156,7 @@
                         <outlet property="pamentWaysLabel" destination="zqs-Jp-FUU" id="vGX-We-EZp"/>
                         <outlet property="passwordChangeButton" destination="He2-RW-uBE" id="dTd-w3-Efq"/>
                         <outlet property="phoneLabel" destination="Zp3-1f-OxU" id="5KA-vX-B9M"/>
+                        <outlet property="signOutButton" destination="Vpw-JE-lPO" id="u2k-xY-RLI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbh-8b-yfh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

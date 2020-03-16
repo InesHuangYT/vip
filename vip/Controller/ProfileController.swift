@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 import FirebaseAuth
 import Firebase
 
@@ -23,6 +24,7 @@ class ProfileController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var deliverWaysLabel: UILabel!
     @IBOutlet weak var pamentWaysLabel: UILabel!
+    @IBOutlet weak var signOutButton: UIButton!
     
    
     override func viewDidLoad() {
@@ -63,5 +65,24 @@ class ProfileController: UIViewController {
         pamentWaysLabel.text = "付款方式    " + (paymentWays!)
     }
         
-        
+    @IBAction func signOutButtonWasPressed(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+            transitionToLogInScene()
+        } catch let err {
+            print ("failed to sign out with error",err)
+           
+        } 
+//        GIDSignIn.sharedInstance().signOut()       transitionToLogInScene()
+    }
+    
+    
+    func transitionToLogInScene(){
+        let storyboard = UIStoryboard(name: "SignUpLogIn", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LogInControllerId") as! LogInController
+        self.navigationController?.pushViewController(vc,animated: true)
+    }
+    
+   
+    
 }

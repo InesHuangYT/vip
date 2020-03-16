@@ -19,7 +19,6 @@ class HomeController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var selectDeliverWayButton: UIButton!
     @IBOutlet weak var selectPaymentWayButton: UIButton!
     @IBOutlet weak var signUpConfirm: UIButton!
-    @IBOutlet weak var signOutButton: UIButton!
     
     @IBOutlet weak var currentUserlabel: UILabel!
 
@@ -53,11 +52,6 @@ class HomeController: UIViewController,UITextFieldDelegate {
     }
 
     
-    
-    @IBAction func signOutButtonWasPressed(_ sender: Any) {
-        GIDSignIn.sharedInstance().signOut()
-        navigationController?.popViewController(animated: true)
-    }
     
     func currentUserName()->(String){
         if let user = Auth.auth().currentUser{
@@ -128,22 +122,52 @@ class HomeController: UIViewController,UITextFieldDelegate {
             let phone = phoneTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             Database.database().reference(withPath:"users/\(self.uid)/Profile/phone").setValue(phone)
         }
-        let message = UIAlertController(title: "註冊成功", message: nil, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "返回登入頁面", style: .default, handler:
-        {action in 
-            print("here need to return to login page!")
-            self.transitionToOtherScene()
+         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
+        .child("Profile")
+        .queryOrderedByKey()
+        .observeSingleEvent(of: .value, with: { snapshot in 
+            guard let value = snapshot.value as? [String:Any] else{
+                print("Error")
+                return
+            }
+            
+            if (value["way"] as? String) == "google"{
+                let message = UIAlertController(title: "您已註冊成功", message: "", preferredStyle: .alert)
+                let confirmAction = UIAlertAction(title: "確認", style: .default, handler: {action in 
+                    print("here go to profile page!")
+                    self.transitionToProfileScene()
+
+                })
+                message.addAction(confirmAction)
+                self.present(message, animated: true, completion: nil)
+
+            }else{
+                let message = UIAlertController(title: "註冊成功", message: nil, preferredStyle: .alert)
+                       let confirmAction = UIAlertAction(title: "返回登入頁面", style: .default, handler:
+                       {action in 
+                           print("here need to return login page!")
+                           self.transitionToLogInScene()
+                       })
+                       message.addAction(confirmAction)
+                       self.present(message, animated: true, completion: nil)
+            }
+            
         })
-        message.addAction(confirmAction)
-        self.present(message, animated: true, completion: nil)
+        
+       
     }
     
     //  go to logIn step
-        func transitionToOtherScene(){
+        func transitionToLogInScene(){
             let storyboard = UIStoryboard(name: "SignUpLogIn", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "LogInControllerId") as! LogInController
             self.navigationController?.pushViewController(vc,animated: true)
         }
+    func transitionToProfileScene(){
+               let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+               let vc = storyboard.instantiateViewController(withIdentifier: "ProfileControllerId") as! ProfileController
+               self.navigationController?.pushViewController(vc,animated: true)
+           }
         
     
 
