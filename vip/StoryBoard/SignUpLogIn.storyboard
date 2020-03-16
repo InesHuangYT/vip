@@ -306,17 +306,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDv-BR-tK9">
-                                <rect key="frame" x="172" y="604" width="31" height="30"/>
-                                <state key="normal" title="登出">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="signOutButtonWasPressed:" destination="Pie-1R-3uH" eventType="touchUpInside" id="tWC-gw-20X"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login UID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwN-aL-DJk">
-                                <rect key="frame" x="8" y="544" width="359" height="20.5"/>
+                                <rect key="frame" x="8" y="544" width="70" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -369,10 +360,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93459850550000001" green="0.95914202930000003" blue="0.90638643500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GDv-BR-tK9" firstAttribute="centerX" secondItem="YxE-Wh-5fL" secondAttribute="centerX" id="8el-vb-4XW"/>
                             <constraint firstItem="NwN-aL-DJk" firstAttribute="leading" secondItem="9Ox-gF-mvj" secondAttribute="leading" constant="8" id="OZL-hD-fXu"/>
-                            <constraint firstItem="9Ox-gF-mvj" firstAttribute="bottom" secondItem="GDv-BR-tK9" secondAttribute="bottom" constant="33" id="TLt-Pb-GcV"/>
-                            <constraint firstItem="GDv-BR-tK9" firstAttribute="centerX" secondItem="NwN-aL-DJk" secondAttribute="centerX" id="qv3-f8-Thr"/>
                             <constraint firstItem="NwN-aL-DJk" firstAttribute="centerY" secondItem="YxE-Wh-5fL" secondAttribute="centerY" constant="220.75" id="zF7-Ab-Dw8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Ox-gF-mvj"/>
@@ -382,7 +370,6 @@
                         <outlet property="phoneTextField" destination="5XF-KV-aPg" id="txS-Dw-utj"/>
                         <outlet property="selectDeliverWayButton" destination="xY6-cl-361" id="lox-vy-kKU"/>
                         <outlet property="selectPaymentWayButton" destination="UdW-Kq-6ZN" id="ECy-Mo-Cn0"/>
-                        <outlet property="signOutButton" destination="GDv-BR-tK9" id="Y9i-Ak-BbU"/>
                         <outlet property="signUpConfirm" destination="onr-jj-2bw" id="ozp-39-utM"/>
                     </connections>
                 </viewController>

@@ -75,6 +75,7 @@ class SignUpController: UIViewController {
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/account").setValue(account)
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/password").setValue(password)
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/name").setValue(name)
+                    Database.database().reference(withPath: "users/\(self.uid)/Profile/way").setValue("directly")
                    
                     if #available(iOS 13.0, *) {
                         self.transitionToOtherScene()

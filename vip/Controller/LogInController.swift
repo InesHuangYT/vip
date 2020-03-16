@@ -36,6 +36,9 @@ class LogInController: UIViewController,GIDSignInDelegate {
         super.viewDidLoad()
         setupTextField()
         GIDSignIn.sharedInstance().delegate = self
+        if let user = Auth.auth().currentUser{
+            uid = user.uid            
+        }
         
     }
     
@@ -81,7 +84,12 @@ class LogInController: UIViewController,GIDSignInDelegate {
          GIDSignIn.sharedInstance()?.presentingViewController = self
                 GIDSignIn.sharedInstance()?.signIn()
                 // Automatically sign in the user.
-        //        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        if uid.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            print("no uid")
+        }else{
+            print("uid : ", uid)
+        }
+//                GIDSignIn.sharedInstance()?.restorePreviousSignIn()
                 
     }
     
@@ -124,9 +132,28 @@ class LogInController: UIViewController,GIDSignInDelegate {
                         let newUserName = currentUser.username
                         Database.database().reference(withPath: "users/\(newUid)/Profile/account").setValue(newAcoount)
                         Database.database().reference(withPath: "users/\(newUid)/Profile/name").setValue(newUserName)
-                        let storyboard = UIStoryboard(name: "SignUpLogIn", bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: "HomeControllerId") as! HomeController
-                        self.navigationController?.pushViewController(vc,animated: true)
+                         Database.database().reference(withPath: "users/\(newUid)/Profile/way").setValue("google")
+                        let storyboard1 = UIStoryboard(name: "SignUpLogIn", bundle: nil)
+                        let vc1 = storyboard1.instantiateViewController(withIdentifier: "HomeControllerId") as! HomeController
+                        
+                        let storyboard2 = UIStoryboard(name: "Profile", bundle: nil)
+                        let vc2 = storyboard2.instantiateViewController(withIdentifier: "ProfileControllerId") as! ProfileController
+                        Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("Profile")
+                            .queryOrderedByKey()
+                            .observeSingleEvent(of: .value, with: { snapshot in 
+                                guard let value = snapshot.value as? [String:Any]
+                                else {
+                                    print("Error")
+                                    return
+                            }
+                                if (value["deliverWays"] as? String == nil || value["paymentWays"] as? String == nil) {
+                                     self.navigationController?.pushViewController(vc1,animated: true)
+                                }else{
+                                     self.navigationController?.pushViewController(vc2,animated: true)
+                                }                            
+                        })
+                        
+                        
 //                        self.present(vc, animated: true, completion: nil)
                                }
                     }
