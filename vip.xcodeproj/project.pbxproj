@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0240A2FD2420828200A7921D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0240A2FC2420828200A7921D /* ProfileController.swift */; };
 		024447C5241F6AC200D502F3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 024447C4241F6AC200D502F3 /* SWRevealViewController.m */; };
 		024447C9241F6E9000D502F3 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024447C8241F6E9000D502F3 /* MainController.swift */; };
 		024447D3241FAAAD00D502F3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024447D2241FAAAD00D502F3 /* MenuViewController.swift */; };
 		024447D5241FAACC00D502F3 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024447D4241FAACC00D502F3 /* MenuTableViewCell.swift */; };
 		024447DD241FC77C00D502F3 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024447DC241FC77C00D502F3 /* OrderController.swift */; };
 		024447DF241FCAE900D502F3 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024447DE241FCAE900D502F3 /* CategoryController.swift */; };
-		024447E1241FD76E00D502F3 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024447E0241FD76E00D502F3 /* ProfileController.swift */; };
 		B087D22C23F56436001FAC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087D22B23F56436001FAC9A /* AppDelegate.swift */; };
 		B087D22E23F56436001FAC9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087D22D23F56436001FAC9A /* SceneDelegate.swift */; };
 		B087D23023F56436001FAC9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B087D22F23F56436001FAC9A /* ViewController.swift */; };
@@ -50,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0240A2FC2420828200A7921D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = SOURCE_ROOT; };
 		024447C2241F6AC100D502F3 /* vip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vip-Bridging-Header.h"; sourceTree = "<group>"; };
 		024447C3241F6AC200D502F3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		024447C4241F6AC200D502F3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		024447D4241FAACC00D502F3 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuTableViewCell.swift; path = vip/Controller/MenuTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		024447DC241FC77C00D502F3 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		024447DE241FCAE900D502F3 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryController.swift; path = vip/StoryBoard/CategoryController.swift; sourceTree = SOURCE_ROOT; };
-		024447E0241FD76E00D502F3 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = vip/StoryBoard/ProfileController.swift; sourceTree = SOURCE_ROOT; };
 		45BE09659B28CB1602AFED1A /* Pods-vip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vip.debug.xcconfig"; path = "Target Support Files/Pods-vip/Pods-vip.debug.xcconfig"; sourceTree = "<group>"; };
 		48C404FB32D82B820BA2907F /* Pods_vip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B087D22823F56436001FAC9A /* vip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +145,7 @@
 		B0E0A31B23F9E55200BE8ECC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				024447E0241FD76E00D502F3 /* ProfileController.swift */,
+				0240A2FC2420828200A7921D /* ProfileController.swift */,
 				024447DE241FCAE900D502F3 /* CategoryController.swift */,
 				024447D2241FAAAD00D502F3 /* MenuViewController.swift */,
 				024447DC241FC77C00D502F3 /* OrderController.swift */,
@@ -343,7 +343,7 @@
 				024447C9241F6E9000D502F3 /* MainController.swift in Sources */,
 				024447C5241F6AC200D502F3 /* SWRevealViewController.m in Sources */,
 				024447D5241FAACC00D502F3 /* MenuTableViewCell.swift in Sources */,
-				024447E1241FD76E00D502F3 /* ProfileController.swift in Sources */,
+				0240A2FD2420828200A7921D /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
