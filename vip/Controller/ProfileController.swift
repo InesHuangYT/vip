@@ -17,6 +17,7 @@ class ProfileController: UIViewController {
 //    var ref : DatabaseReference!
     let ref = Database.database().reference()
     
+    @IBOutlet weak var btnMenuButton: UIBarButtonItem!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var passwordChangeButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
@@ -29,6 +30,10 @@ class ProfileController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnMenuButton.target = revealViewController()
+        btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
             .child("Profile")
             .queryOrderedByKey()
@@ -58,9 +63,9 @@ class ProfileController: UIViewController {
                    phoneLabel.text = "手機號碼    " + (phone!)
                }
         
-        accountLabel.text = "    帳號        " + (account!)
-        nameLabel.text = "    姓名        " + (name!)
-        emailLabel.text = "    信箱        " + (account!)
+        accountLabel.text = "帳號            " + (account!)
+        nameLabel.text = "姓名            " + (name!)
+        emailLabel.text = "信箱            " + (account!)
         deliverWaysLabel.text = "寄送方式    " + (deliverWays!)
         pamentWaysLabel.text = "付款方式    " + (paymentWays!)
     }
