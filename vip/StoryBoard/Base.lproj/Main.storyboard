@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PNv-l2-rTb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y8K-rH-oHA">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -113,6 +113,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RC-g2-UjU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2312.8000000000002" y="950.37481259370327"/>
+        </scene>
+        <!--Coupon Controller-->
+        <scene sceneID="Fkh-MU-OHp">
+            <objects>
+                <viewController storyboardIdentifier="CouponController" automaticallyAdjustsScrollViewInsets="NO" id="y8K-rH-oHA" customClass="CouponController" customModule="vip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lu5-qz-xUl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLE-ps-cbE">
+                                <rect key="frame" x="84" y="145" width="71" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.53689843420000005" green="0.53784304859999998" blue="0.49803376199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eH-JU-wrR">
+                                <rect key="frame" x="309" y="66" width="50" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="24小時客服" image="support"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHG-Sh-djQ">
+                                <rect key="frame" x="84" y="210" width="71" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.53689843420000005" green="0.53784304859999998" blue="0.49803376199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90985900159999999" green="0.96641892190000001" blue="0.87863266470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="h0S-7l-gTs"/>
+                    </view>
+                    <connections>
+                        <outlet property="body" destination="CHG-Sh-djQ" id="Khg-tf-hGr"/>
+                        <outlet property="head" destination="SLE-ps-cbE" id="jqz-7M-FgI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bU-Kc-ZzN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3268" y="125"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="tZN-c7-cqk">
@@ -256,9 +296,6 @@
                                     <color key="titleColor" red="0.53693288559999997" green="0.53778618570000003" blue="0.50195598600000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" red="0.43921881909999999" green="0.43921005730000001" blue="0.43921601770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <segue destination="PNv-l2-rTb" kind="show" id="Tvl-2J-xoC"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="搜尋" borderStyle="bezel" placeholder="搜尋" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Li-aT-IEE">
                                 <rect key="frame" x="0.0" y="117" width="375" height="46"/>
@@ -410,51 +447,6 @@
             </objects>
             <point key="canvasLocation" x="2313" y="-657"/>
         </scene>
-        <!--Coupon Controller-->
-        <scene sceneID="eQM-2W-AP0">
-            <objects>
-                <viewController storyboardIdentifier="CouponController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PNv-l2-rTb" customClass="CouponController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fTY-h7-aNp" customClass="Cou">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhk-Ws-mfC">
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="側邊欄" image="List_button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPp-b5-a1b">
-                                <rect key="frame" x="332" y="66" width="35" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="24小時客服" image="support"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INT-s2-b9g">
-                                <rect key="frame" x="38" y="123" width="71" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.53689843420000005" green="0.53784304859999998" blue="0.49803376199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiP-Cq-A6V">
-                                <rect key="frame" x="38" y="197" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.53689843420000005" green="0.53784304859999998" blue="0.49803376199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.90570509430000001" green="0.9737959504" blue="0.88626366850000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="31m-HZ-pXy"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="y1Q-ez-H17"/>
-                    <connections>
-                        <outlet property="body" destination="CiP-Cq-A6V" id="XWd-k5-fHW"/>
-                        <outlet property="head" destination="INT-s2-b9g" id="qGD-Pa-F6M"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="znF-TA-GvV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3262" y="125"/>
-        </scene>
         <!--Add Coupon Controller-->
         <scene sceneID="XH8-FO-f76">
             <objects>
@@ -480,7 +472,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="add:" destination="PI5-ip-zsI" eventType="touchUpInside" id="oIl-0g-12f"/>
+                                    <action selector="add:" destination="PI5-ip-zsI" eventType="touchUpInside" id="o8b-Zf-CL4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -488,7 +480,7 @@
                         <viewLayoutGuide key="safeArea" id="hPV-db-u2g"/>
                     </view>
                     <connections>
-                        <outlet property="OK" destination="7aG-n5-GvG" id="BhO-r0-ZBy"/>
+                        <outlet property="OK" destination="7aG-n5-GvG" id="kDY-tw-jlD"/>
                         <outlet property="body" destination="RfW-it-JBD" id="u84-fT-o5n"/>
                         <outlet property="head" destination="4Nl-ek-GEV" id="wT0-oN-haj"/>
                     </connections>

@@ -18,26 +18,31 @@ class CouponController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Database.database().reference().child("coupon")
-        .queryOrderedByKey()
-        .observeSingleEvent(of: .value, with: { snapshot in
-            guard let value = snapshot.value as? [String:Any]
-                else {
-                    print("Error")
-                    return
-            }
-            print(value)
-            self.setLabel(value: value)
-        })
+        ref.child("coupon").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let id = value?.allKeys
+            self.ref.child("coupon").child(id?[0] as! String)
+                       .queryOrderedByKey()
+                       .observeSingleEvent(of: .value, with: { snapshot in 
+                           guard let values = snapshot.value as? [String:Any]
+                               else {
+                                   print("Error")
+                                   return
+                           }
+                        print("values : " , values)
+
+                        self.setLabel(value: values )
+                       })
+            
+        }
+       
+    )}
+    func setLabel(value:[String:Any]){
+        let first = value["head"] as? String
+        let second = value["body"] as? String
+        head.text = first
+        body.text = second
+
     }
     
-    func setLabel(value:[String:Any]){
-
-        let h = value["head"] as? String
-        let b = value["body"] as? String
-        
-        head.text = (h!)
-        body.text = (b!)
-    }
 }
