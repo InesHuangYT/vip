@@ -8,13 +8,14 @@
 
 import UIKit
 
-class MainController: UIViewController {
+class ViewController: UIViewController {
     
+
     @IBOutlet weak var btnMenuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnMenuButton.target = self.revealViewController()
+        btnMenuButton.target = revealViewController()
         btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
 
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())

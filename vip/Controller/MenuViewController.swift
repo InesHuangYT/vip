@@ -43,7 +43,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         if cell.lblMenu.text! == "我的最愛"
         {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let desController = mainStoryboard.instantiateViewController(withIdentifier: "MainController") as! MainController
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             let newFrontViewController = UINavigationController.init(rootViewController: desController)
             
             revealViewController().pushFrontViewController(newFrontViewController, animated: true)
@@ -52,7 +52,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         if cell.lblMenu.text! == "首頁"
         {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let desController = mainStoryboard.instantiateViewController(withIdentifier: "MainController") as! MainController
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             let newFrontViewController = UINavigationController.init(rootViewController: desController)
             
             revealViewController().pushFrontViewController(newFrontViewController, animated: true)
@@ -70,7 +70,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         if cell.lblMenu.text! == "團購"
         {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let desController = mainStoryboard.instantiateViewController(withIdentifier: "MainController") as! MainController
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             let newFrontViewController = UINavigationController.init(rootViewController: desController)
             
             revealViewController().pushFrontViewController(newFrontViewController, animated: true)
@@ -88,7 +88,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         if cell.lblMenu.text! == "購物車"
         {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let desController = mainStoryboard.instantiateViewController(withIdentifier: "MainController") as! MainController
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             let newFrontViewController = UINavigationController.init(rootViewController: desController)
             
             revealViewController().pushFrontViewController(newFrontViewController, animated: true)
@@ -96,8 +96,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if cell.lblMenu.text! == "個人資訊"
         {
-             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-             let desController = mainStoryboard.instantiateViewController(withIdentifier: "MainController") as! MainController
+             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+             let desController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileControllerId") as! ProfileController
              let newFrontViewController = UINavigationController.init(rootViewController: desController)
              
              revealViewController().pushFrontViewController(newFrontViewController, animated: true)
