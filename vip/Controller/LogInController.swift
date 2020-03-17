@@ -71,8 +71,8 @@ class LogInController: UIViewController,GIDSignInDelegate {
                 self.errorLabel.textColor = UIColor.red
             }else{
                 
-                let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "ProfileControllerId") as! ProfileController
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
                 self.navigationController?.pushViewController(vc,animated: true)  
             }
             
