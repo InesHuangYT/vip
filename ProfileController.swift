@@ -5,6 +5,7 @@
 //  Created by Ines on 2020/3/8.
 //  Copyright © 2020 Ines. All rights reserved.
 //
+
 import UIKit
 import FirebaseAuth
 import Firebase
@@ -29,7 +30,7 @@ class ProfileController: UIViewController {
         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
             .child("Profile")
             .queryOrderedByKey()
-            .observeSingleEvent(of: .value, with: { snapshot in
+            .observeSingleEvent(of: .value, with: { snapshot in 
                 guard let value = snapshot.value as? [String:Any]
                     else {
                         print("Error")
