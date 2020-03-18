@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B087D22723F56436001FAC9A"
-               BuildableName = "vip.app"
+               BuildableName = "VIP.app"
                BlueprintName = "VIP"
-               ReferencedContainer = "container:../vip.xcodeproj">
+               ReferencedContainer = "container:../VIP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -59,9 +59,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B087D22723F56436001FAC9A"
-            BuildableName = "vip.app"
+            BuildableName = "VIP.app"
             BlueprintName = "VIP"
-            ReferencedContainer = "container:../vip.xcodeproj">
+            ReferencedContainer = "container:../VIP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
