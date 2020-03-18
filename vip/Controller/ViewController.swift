@@ -9,18 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
 
-    @IBOutlet weak var btnMenuButton: UIBarButtonItem!
-    
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var btnMenu: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnMenuButton.target = revealViewController()
-        btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+    btnMenu.target = self.revealViewController()
+    btnMenu.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+        setupTextField()
 
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
+    private func setupTextField(){
+        searchTextField.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    @objc private func hideKeyboard(){
+        searchTextField.resignFirstResponder()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+extension ViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

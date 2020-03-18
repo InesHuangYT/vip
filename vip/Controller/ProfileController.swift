@@ -17,7 +17,7 @@ class ProfileController: UIViewController {
 //    var ref : DatabaseReference!
     let ref = Database.database().reference()
     
-    @IBOutlet weak var btnMenuButton: UIBarButtonItem!
+    @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var passwordChangeButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
@@ -30,10 +30,9 @@ class ProfileController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnMenuButton.target = revealViewController()
-        btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        
+        btnMenu.target = self.revealViewController()
+        btnMenu.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+
         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid)
             .child("Profile")
             .queryOrderedByKey()

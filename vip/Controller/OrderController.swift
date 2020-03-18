@@ -9,15 +9,12 @@
 import UIKit
 
 class OrderController: UIViewController {
-
-     @IBOutlet weak var btnMenuButton: UIBarButtonItem!
        
-       override func viewDidLoad() {
+    @IBOutlet weak var btnMenu: UIBarButtonItem!
+    override func viewDidLoad() {
            super.viewDidLoad()
-           btnMenuButton.target = revealViewController()
-           btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-
-           self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+           btnMenu.target = self.revealViewController()
+           btnMenu.action = #selector(SWRevealViewController.rightRevealToggle(_:))
        }
        override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
