@@ -13,11 +13,15 @@ class CouponController: UIViewController {
 
     let ref =  Database.database().reference()
     
+    @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var head: UILabel!
     @IBOutlet weak var body: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnMenu.target = self.revealViewController()
+        btnMenu.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+        
         ref.child("coupon").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let id = value?.allKeys

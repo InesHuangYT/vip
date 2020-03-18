@@ -60,7 +60,6 @@ class LogInController: UIViewController,GIDSignInDelegate {
     @IBAction func signUpButtonWasPressed(_ sender: UIButton) {
     }
     
-    @available(iOS 13.0, *)
     @IBAction func logInButtonWasPressed(_ sender: UIButton) {
         let account = accountTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -136,8 +135,8 @@ class LogInController: UIViewController,GIDSignInDelegate {
                         let storyboard1 = UIStoryboard(name: "SignUpLogIn", bundle: nil)
                         let vc1 = storyboard1.instantiateViewController(withIdentifier: "HomeControllerId") as! HomeController
                         
-                        let storyboard2 = UIStoryboard(name: "Profile", bundle: nil)
-                        let vc2 = storyboard2.instantiateViewController(withIdentifier: "ProfileControllerId") as! ProfileController
+                        let storyboard2 = UIStoryboard(name: "Main", bundle: nil)
+                        let vc2 = storyboard2.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
                         Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("Profile")
                             .queryOrderedByKey()
                             .observeSingleEvent(of: .value, with: { snapshot in 

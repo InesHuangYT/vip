@@ -77,11 +77,7 @@ class SignUpController: UIViewController {
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/name").setValue(name)
                     Database.database().reference(withPath: "users/\(self.uid)/Profile/way").setValue("directly")
                    
-                    if #available(iOS 13.0, *) {
                         self.transitionToOtherScene()
-                    } else {
-                        // Fallback on earlier versions
-                    } 
                    
 
                       
@@ -130,7 +126,6 @@ class SignUpController: UIViewController {
     }
     
 //  go to next step
-    @available(iOS 13.0, *)
     func transitionToOtherScene(){
         let storyboard = UIStoryboard(name: "SignUpLogIn", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "HomeControllerId") as! HomeController

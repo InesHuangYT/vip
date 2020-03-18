@@ -10,12 +10,12 @@ import UIKit
 
 class CategoryController: UIViewController {
 
-    @IBOutlet weak var btnMenuButton: UIBarButtonItem!
+    @IBOutlet weak var btnMenu: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        btnMenuButton.target = self.revealViewController()
-        btnMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        btnMenu.target = self.revealViewController()
+        btnMenu.action = #selector(SWRevealViewController.rightRevealToggle(_:))
     self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
