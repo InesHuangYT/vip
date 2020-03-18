@@ -19,8 +19,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
         layer.borderColor = myColor.cgColor
         layer.cornerRadius = 45
 
-
-
     }
     
     func setProductLabel(text : String){
