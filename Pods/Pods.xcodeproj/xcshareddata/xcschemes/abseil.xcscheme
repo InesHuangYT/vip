@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B087D22723F56436001FAC9A"
                BuildableName = "vip.app"
-               BlueprintName = "vip"
+               BlueprintName = "VIP"
                ReferencedContainer = "container:../vip.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,7 +60,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B087D22723F56436001FAC9A"
             BuildableName = "vip.app"
-            BlueprintName = "vip"
+            BlueprintName = "VIP"
             ReferencedContainer = "container:../vip.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
