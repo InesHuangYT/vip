@@ -24,7 +24,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AdobeStock_136310491_Preview" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-Vc-7RR">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-Vc-7RR">
                         <rect key="frame" x="7" y="55" width="123" height="99"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -42,12 +42,10 @@
             <size key="customSize" width="140" height="145"/>
             <connections>
                 <outlet property="priceLabel" destination="h0O-he-QLf" id="PQm-ob-BOq"/>
+                <outlet property="productImage" destination="2gh-Vc-7RR" id="RRd-0t-tjA"/>
                 <outlet property="productLabel" destination="h9P-f9-t9Y" id="TvR-gW-Ghf"/>
             </connections>
             <point key="canvasLocation" x="-372.46376811594206" y="51.897321428571423"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="AdobeStock_136310491_Preview" width="114" height="67"/>
-    </resources>
 </document>

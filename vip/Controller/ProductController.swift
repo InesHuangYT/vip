@@ -18,9 +18,6 @@ class ProductController: UIViewController {
     var cellMarginSize = 16.0
     var ref: DatabaseReference!
 
-
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self 
@@ -28,32 +25,7 @@ class ProductController: UIViewController {
 //        將ProductCollectionViewCell連進來 
         self.collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
         self.setupGridView()
-        
-        Database.database().reference().child("Product")
-            .queryOrderedByKey()
-            .observeSingleEvent(of: .value, with: { snapshot in 
-//                let value = snapshot.value as? [String:Any]
-//                self.length = (value?.keys.count)!
-//                print("length",self.length)
-//                self.ref = Database.database().reference().child("Product")
-//                var productName = [String]()
-//                var productPrice = [String]()
-//                
-//                for i in value!.keys{
-//                    let reference = self.ref.child(i)
-//                    reference.observe(.value, with: { (snapshot) in
-//                        let value = snapshot.value as? [String: Any] 
-//                        let productNameAdd = value?["ProductName"] as? String ?? ""
-//                        let productPriceAdd = value?["Price"] as? String ?? ""
-//                        productName.append(productNameAdd) 
-//                        productPrice.append(productPriceAdd) 
-//                        
-//                        print("here1 ",productName, productPrice)
-//                      
-//                        
-//                    })
-//                }                       
-            })
+//        self.collectionView.reloadData()
 
 
     }
@@ -78,8 +50,10 @@ extension ProductController : UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
 //        cell.setProductLabel(text: self.dataProductName[indexPath.row])
         cell.setProductLabel(index: indexPath.row)
-
         return cell
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
 }
