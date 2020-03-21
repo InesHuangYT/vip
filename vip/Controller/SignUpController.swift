@@ -62,7 +62,7 @@ class SignUpController: UIViewController {
 //        create the user 
             Auth.auth().createUser(withEmail: account, password: password) {(result,err) in 
                 if err != nil{
-                    
+                    print("here err ! ",err as Any)
                     self.showError("Error with account form, must be email form")
                     
                 }else{
@@ -100,7 +100,7 @@ class SignUpController: UIViewController {
         
         let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         if isPasswordValid(cleanedPassword) == false{
-            return "密碼長度至少為8"
+            return "密碼長度至少為6"
         }
         if passwordTextField.text != passwordConfirmTextField.text{
             
@@ -114,7 +114,7 @@ class SignUpController: UIViewController {
     func isPasswordValid(_ password : String) -> Bool{
 //       at least more that eight charaters && at least one alphabet https://stackoverflow.com/questions/39284607/how-to-implement-a-regex-for-password-validation-in-swift
 //        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
-         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*\\d)(?=.*\\d)[A-Za-z\\d]{8,}$")
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@","^[0-9A-Za-z]{6,16}$")
         return passwordTest.evaluate(with: password)
     }
     
