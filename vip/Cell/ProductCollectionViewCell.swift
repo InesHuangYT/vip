@@ -12,17 +12,18 @@ import FirebaseStorage
 
 class ProductCollectionViewCell: UICollectionViewCell {
     var ref: DatabaseReference!
-
     @IBOutlet weak var productLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         let myColor : UIColor = UIColor( red: 137/255, green: 137/255, blue:128/255, alpha: 1.0 )
         layer.borderWidth = 5
         layer.borderColor = myColor.cgColor
-        layer.cornerRadius = 45        
-
+        layer.cornerRadius = 45   
+        productImage.layer.cornerRadius = 45
+        
     }
     
     func setProductLabel(index:Int){
@@ -44,6 +45,24 @@ class ProductCollectionViewCell: UICollectionViewCell {
                     let value = snapshot.value as? [String: Any]
                     self.productLabel.text = value?["ProductName"] as? String ?? ""
                     self.priceLabel.text = value?["Price"] as? String ?? ""
+                    let productImageUrl = value?["imageURL"] 
+                    self.productImage.image = UIImage(named: "logo")
+                    
+                    if let imageUrl = URL(string: productImageUrl as! String){
+                       URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+                        if error != nil {
+                            print("Download Image Task Fail: \(error!.localizedDescription)")
+                        }
+                        else if let imageData = data {
+                            DispatchQueue.main.async { 
+                               self.productImage.image = UIImage(data: imageData)
+                            }
+                        }
+                        
+                        }.resume()
+
+                    }
+                    
                 })
                 
             })
