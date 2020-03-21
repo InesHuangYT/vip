@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class ProductController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -16,14 +17,14 @@ class ProductController: UIViewController {
     var estimatedWidth = 160.0
     var cellMarginSize = 16.0
     var ref: DatabaseReference!
-    let productCount = Database.database().reference().child("Product").key?.count
+
+
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self 
         self.collectionView.dataSource = self
-        print("productCount",productCount)
 //        將ProductCollectionViewCell連進來 
         self.collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
         self.setupGridView()
@@ -69,7 +70,7 @@ class ProductController: UIViewController {
 
 extension ProductController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section:Int) -> Int {
-    
+        let productCount = Database.database().reference().child("Product").key?.count
         return (productCount ?? 0)-1 
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell{
