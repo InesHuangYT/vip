@@ -15,6 +15,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,6 +24,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
         layer.borderColor = myColor.cgColor
         layer.cornerRadius = 45   
         productImage.layer.cornerRadius = 45
+        productImage.layer.borderWidth = 1
+        productImage.layer.borderColor = myColor.cgColor
+
         
     }
     
@@ -31,7 +35,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
             .queryOrderedByKey()
             .observeSingleEvent(of: .value, with: { snapshot in 
                 let value = snapshot.value as? [String:Any]
-//              let valueKey = value?.keys as? [Any]
                 let valueKey = value.map { Array($0.keys) }
                 print("valueKey",valueKey ?? 0)
                 print("valueKey[0]",valueKey?[0] as Any) 
@@ -69,5 +72,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
     
     
-   
+    
+    
+    
+    
 }
