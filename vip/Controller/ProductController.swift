@@ -54,7 +54,11 @@ extension ProductController : UICollectionViewDataSource{
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let storyboard = UIStoryboard(name: "Product", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProductInformationControllerId") as!  ProductInformationController
+        vc.index = indexPath.row
+        self.navigationController?.pushViewController(vc,animated: true)
+
     }
 }
 
