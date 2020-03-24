@@ -157,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				B042F7F4241F8CB2005982AF /* ProductController.swift */,
+				B042F7F6241F9064005982AF /* ProductInformationController.swift */,
 				02F21D5E24210DAE003860F9 /* CouponController.swift */,
 				02F21D5C24210211003860F9 /* AddCouponController.swift */,
 				02F25D67242096110041541E /* CategoryController.swift */,
@@ -168,7 +169,6 @@
 				C0164266240E0C2A00B760B2 /* ShoppingCartController.swift */,
 				C01A7AF0240FBF1B00E99EED /* CreateProductDataController.swift */,
 				B09ED5E42414EE0500D3C4A6 /* ProfileController.swift */,
-				B042F7F6241F9064005982AF /* ProductInformationController.swift */,
 				02F25D6B2420967A0041541E /* MenuViewController.swift */,
 			);
 			path = Controller;

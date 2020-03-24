@@ -26,8 +26,7 @@ class ProductController: UIViewController {
         self.collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
         self.setupGridView()
 //        self.collectionView.reloadData()
-
-
+        
     }
 
     func setupGridView(){
@@ -49,6 +48,7 @@ extension ProductController : UICollectionViewDataSource{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
 //        cell.setProductLabel(text: self.dataProductName[indexPath.row])
+//        cell.setProductLabel(index: indexPath.row)
         cell.setProductLabel(index: indexPath.row)
         return cell
         
@@ -65,7 +65,7 @@ extension ProductController : UICollectionViewDataSource{
 extension ProductController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.calculateWith()
-        print(width,width*1.2)
+//        print(width,width*1.2)
         return CGSize(width: width, height: width*1.2)
     }
     func calculateWith()-> CGFloat{
